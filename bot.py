@@ -173,7 +173,7 @@ def format_price(value):
 
 def format_signal(s):
     symbol = s["symbol"]
-    chart_url = f"https://www.binance.com/en/futures/{symbol}"
+    chart_url = f"binance://trade/{symbol}"
     direction = "LONG 🟢" if s["direction"] == "LONG" else "SHORT 🔴"
 
     return (
