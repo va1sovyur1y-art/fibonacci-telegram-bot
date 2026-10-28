@@ -190,15 +190,20 @@ def format_signal(s):
     )
 
 
-def send_telegram(message):
+def send_telegram(message, reply_markup=None):
+    payload = {
+        "chat_id": CHAT_ID,
+        "text": message,
+        "parse_mode": "HTML",
+        "disable_web_page_preview": True,
+    }
+
+    if reply_markup:
+        payload["reply_markup"] = reply_markup
+
     response = session.post(
         f"https://api.telegram.org/bot{TOKEN}/sendMessage",
-        data={
-            "chat_id": CHAT_ID,
-            "text": message,
-            "parse_mode": "HTML",
-            "disable_web_page_preview": True,
-        },
+        json=payload,
         timeout=20,
     )
     response.raise_for_status()
@@ -207,6 +212,7 @@ def send_telegram(message):
     if not result.get("ok"):
         raise RuntimeError(f"Telegram API error: {result}")
 
+    return result
 
 def load_sent():
     try:
