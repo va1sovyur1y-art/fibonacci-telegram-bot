@@ -46,13 +46,8 @@ return [symbol for symbol, _ in symbols[:TOP_SYMBOLS]]
 def get_klines(symbol):
 data = get_json(
 f"{BASE_URL}/api/v3/klines",
-{
-"symbol": symbol,
-"interval": TIMEFRAME,
-"limit": 100,
-},
+{"symbol": symbol, "interval": TIMEFRAME, "limit": 100},
 )
-# Последняя свеча ещё формируется — не используем её.
 return data[:-1]
 
 def calculate_atr(candles, period=ATR_PERIOD):
@@ -90,7 +85,6 @@ setups = []
 
 for length in IMPULSE_CANDLES:
     recent = candles[-length:]
-
     start = float(recent[0][1])
     end = float(recent[-1][4])
 
@@ -111,7 +105,6 @@ for length in IMPULSE_CANDLES:
     path = sum(close_changes) + abs(
         float(recent[0][4]) - float(recent[0][1])
     )
-
     efficiency = move_abs / path if path > 0 else 0
 
     if efficiency < MIN_EFFICIENCY:
@@ -182,11 +175,14 @@ return (
 )
 
 def send_telegram(message, reply_markup=None):
+if not TOKEN or not CHAT_ID:
+raise RuntimeError("Не заданы TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID.")
+
 payload = {
-"chat_id": CHAT_ID,
-"text": message,
-"parse_mode": "HTML",
-"disable_web_page_preview": True,
+    "chat_id": CHAT_ID,
+    "text": message,
+    "parse_mode": "HTML",
+    "disable_web_page_preview": True,
 }
 
 if reply_markup:
@@ -200,7 +196,6 @@ response = session.post(
 response.raise_for_status()
 
 result = response.json()
-
 if not result.get("ok"):
     raise RuntimeError(f"Telegram API error: {result}")
 
@@ -209,7 +204,7 @@ return result
 def load_sent():
 try:
 with open("sent_signals.txt", "r", encoding="utf-8") as f:
-return set(line.strip() for line in f if line.strip())
+return {line.strip() for line in f if line.strip()}
 except FileNotFoundError:
 return set()
 
@@ -226,7 +221,6 @@ raise RuntimeError(
 
 sent = load_sent()
 symbols = get_top_symbols()
-
 print(f"Сканируем {len(symbols)} пар на таймфрейме {TIMEFRAME}")
 
 for symbol in symbols:
@@ -242,14 +236,12 @@ for symbol in symbols:
                 continue
 
             keyboard = {
-                "inline_keyboard": [
-                    [
-                        {
-                            "text": "📊 Рассчитать маржу",
-                            "callback_data": f"margin:{signal_id}",
-                        }
-                    ]
-                ]
+                "inline_keyboard": [[
+                    {
+                        "text": "📊 Рассчитать маржу",
+                        "callback_data": f"margin:{signal_id}",
+                    }
+                ]]
             }
 
             send_telegram(
@@ -259,10 +251,7 @@ for symbol in symbols:
 
             sent.add(signal_id)
             save_sent(sent)
-
-            print(
-                f"Отправлен сетап: {symbol} {s['direction']}"
-            )
+            print(f"Отправлен сетап: {symbol} {s['direction']}")
 
     except Exception as error:
         print(f"Ошибка для {symbol}: {error}")
