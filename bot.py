@@ -229,7 +229,6 @@ def save_sent(sent):
 
 
 def main():
-def main():
 if not TOKEN or not CHAT_ID:
 raise RuntimeError(
 "Проверь GitHub Secrets: TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID."
@@ -244,20 +243,20 @@ for symbol in symbols:
         setups = find_impulses(symbol)
 
         for s in setups:
-            signal_id = (
-                f"{s['symbol']}:{s['direction']}:{s['candle_time']}"
-            )
+            signal_id = f"{s['symbol']}:{s['direction']}:{s['candle_time']}"
 
             if signal_id in sent:
                 continue
 
             keyboard = {
-                "inline_keyboard": [[
-                    {
-                        "text": "📊 Рассчитать маржу",
-                        "callback_data": f"margin:{signal_id}"
-                    }
-                ]]
+                "inline_keyboard": [
+                    [
+                        {
+                            "text": "📊 Рассчитать маржу",
+                            "callback_data": f"margin:{signal_id}"
+                        }
+                    ]
+                ]
             }
 
             send_telegram(
