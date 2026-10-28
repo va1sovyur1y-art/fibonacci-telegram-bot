@@ -242,7 +242,7 @@ def main():
         try:
             setups = find_impulses(symbol)
 
-            for s in setups:
+                        for s in setups:
                 signal_id = (
                     f"{s['symbol']}:{s['direction']}:{s['candle_time']}"
                 )
@@ -250,7 +250,7 @@ def main():
                 if signal_id in sent:
                     continue
 
-                                keyboard =                 keyboard = {
+                keyboard = {
                     "inline_keyboard": [[
                         {
                             "text": "📊 Рассчитать маржу",
@@ -266,6 +266,10 @@ def main():
 
                 sent.add(signal_id)
                 save_sent(sent)
+                print(f"Отправлен сетап: {symbol} {s['direction']}")
+
+        except Exception as error:
+            print(f"Ошибка для {symbol}: {error}")
                 print(f"Отправлен сетап: {symbol} {s['direction']}")
                 print(f"Отправлен сетап: {symbol} {s['direction']}")
 
