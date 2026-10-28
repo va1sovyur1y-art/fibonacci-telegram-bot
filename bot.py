@@ -33,11 +33,15 @@ def send_telegram(text):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     response = session.post(
         url,
-        data={"chat_id": CHAT_ID, "text": text, "parse_mode": "HTML"},
+        data={
+            "chat_id": CHAT_ID,
+            "text": text,
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True
+        },
         timeout=20
     )
     response.raise_for_status()
-
 
 def get_symbols():
     info = get_json("/api/v3/exchangeInfo")
@@ -173,7 +177,7 @@ def format_signal(s):
     )
 
     symbol = s["symbol"]
-    pair = symbol.removesuffix("USDT") + "_USDT"
+chart_url = f"https://www.binance.com/en/futures/{symbol}"
 
     chart_url = f"https://www.binance.com/en/futures/{pair}"
 
