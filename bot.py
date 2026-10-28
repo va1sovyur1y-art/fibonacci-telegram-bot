@@ -226,8 +226,6 @@ def save_sent(sent):
     with open("sent_signals.txt", "w", encoding="utf-8") as f:
         for item in sorted(sent):
             f.write(item + "\n")
-
-
 def main():
 if not TOKEN or not CHAT_ID:
 raise RuntimeError(
