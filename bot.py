@@ -250,7 +250,7 @@ def main():
                 if signal_id in sent:
                     continue
 
-                keyboard = {
+                                    keyboard = {
                     "inline_keyboard": [[
                         {
                             "text": "📊 Рассчитать маржу",
