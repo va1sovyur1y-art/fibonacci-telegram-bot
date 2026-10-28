@@ -229,55 +229,50 @@ def save_sent(sent):
 
 
 def main():
-    if not TOKEN or not CHAT_ID:
-        raise RuntimeError(
-            "Проверь GitHub Secrets: TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID."
-        )
+def main():
+if not TOKEN or not CHAT_ID:
+raise RuntimeError(
+"Проверь GitHub Secrets: TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID."
+)
 
-    sent = load_sent()
-    symbols = get_top_symbols()
-    print(f"Сканируем {len(symbols)} пар на таймфрейме {TIMEFRAME}")
+sent = load_sent()
+symbols = get_top_symbols()
+print(f"Сканируем {len(symbols)} пар на таймфрейме {TIMEFRAME}")
 
-    for symbol in symbols:
-        try:
-            setups = find_impulses(symbol)
+for symbol in symbols:
+    try:
+        setups = find_impulses(symbol)
 
-                        for s in setups:
-                signal_id = (
-                    f"{s['symbol']}:{s['direction']}:{s['candle_time']}"
-                )
+        for s in setups:
+            signal_id = (
+                f"{s['symbol']}:{s['direction']}:{s['candle_time']}"
+            )
 
-                if signal_id in sent:
-                    continue
+            if signal_id in sent:
+                continue
 
-                                    keyboard = {
-                    "inline_keyboard": [[
-                        {
-                            "text": "📊 Рассчитать маржу",
-                            "callback_data": f"margin:{signal_id}"
-                        }
-                    ]]
-                }
+            keyboard = {
+                "inline_keyboard": [[
+                    {
+                        "text": "📊 Рассчитать маржу",
+                        "callback_data": f"margin:{signal_id}"
+                    }
+                ]]
+            }
 
-                send_telegram(
-                    format_signal(s),
-                    reply_markup=keyboard
-                )
+            send_telegram(
+                format_signal(s),
+                reply_markup=keyboard
+            )
 
-                sent.add(signal_id)
-                save_sent(sent)
-                print(f"Отправлен сетап: {symbol} {s['direction']}")
+            sent.add(signal_id)
+            save_sent(sent)
+            print(f"Отправлен сетап: {symbol} {s['direction']}")
 
-        except Exception as error:
-            print(f"Ошибка для {symbol}: {error}")
-                print(f"Отправлен сетап: {symbol} {s['direction']}")
-                print(f"Отправлен сетап: {symbol} {s['direction']}")
+    except Exception as error:
+        print(f"Ошибка для {symbol}: {error}")
 
-        except Exception as error:
-            print(f"Ошибка для {symbol}: {error}")
+print("Сканирование завершено.")
 
-    print("Сканирование завершено.")
-
-
-if __name__ == "__main__":
-    main()
+if name == "main":
+main()
