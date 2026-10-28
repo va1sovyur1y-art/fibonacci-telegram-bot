@@ -162,4 +162,4 @@ def find_impulses(symbol):
         return []
 
     setups.sort(key=lambda s: s["move_pct"], reverse=True)
-    return [set
+    return [set]
