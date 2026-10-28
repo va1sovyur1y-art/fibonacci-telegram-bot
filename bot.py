@@ -250,7 +250,20 @@ def main():
                 if signal_id in sent:
                     continue
 
-                send_telegram(format_signal(s))
+                                keyboard = {
+                    "inline_keyboard": [[
+                        {
+                            "text": "📊 Рассчитать маржу",
+                            "callback_data": f"margin:{signal_id}"
+                        }
+                    ]]
+                }
+
+                send_telegram(
+                    format_signal(s),
+                    reply_markup=keyboard
+                )
+
                 sent.add(signal_id)
                 save_sent(sent)
                 print(f"Отправлен сетап: {symbol} {s['direction']}")
