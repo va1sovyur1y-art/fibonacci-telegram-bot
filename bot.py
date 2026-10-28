@@ -1,37 +1,197 @@
 import os
 import requests
 
+BASE_URL = "https://data-api.binance.vision"
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-BINANCE_URL = "https://data-api.binance.vision"
+TIMEFRAME = "15m"
+ATR_PERIOD = 14
+MIN_IMPULSE_ATR = 2.0
+MIN_EFFICIENCY = 0.55
+IMPULSE_CANDLES = (3, 4, 5)
+TOP_SYMBOLS = 20
 
-def main():
-    if not TOKEN or not CHAT_ID:
-        raise RuntimeError(
-            "Не заданы TELEGRAM_BOT_TOKEN или TELEGRAM_CHAT_ID в Secrets."
+session = requests.Session()
+session.headers.update({"User-Agent": "FibonacciTelegramScanner/1.0"})
+
+
+def get_json(url, params=None):
+    response = session.get(url, params=params, timeout=20)
+    response.raise_for_status()
+    return response.json()
+
+
+def get_top_symbols():
+    data = get_json(f"{BASE_URL}/api/v3/ticker/24hr")
+    excluded = ("UPUSDT", "DOWNUSDT", "BULLUSDT", "BEARUSDT")
+    symbols = []
+
+    for item in data:
+        symbol = item.get("symbol", "")
+
+        if not symbol.endswith("USDT"):
+            continue
+        if any(symbol.endswith(x) for x in excluded):
+            continue
+
+        try:
+            volume = float(item["quoteVolume"])
+        except (ValueError, TypeError, KeyError):
+            continue
+
+        symbols.append((symbol, volume))
+
+    symbols.sort(key=lambda x: x[1], reverse=True)
+    return [symbol for symbol, _ in symbols[:TOP_SYMBOLS]]
+
+
+def get_klines(symbol):
+    data = get_json(
+        f"{BASE_URL}/api/v3/klines",
+        {
+            "symbol": symbol,
+            "interval": TIMEFRAME,
+            "limit": 100,
+        },
+    )
+    # Последняя свеча ещё формируется — не используем её.
+    return data[:-1]
+
+
+def calculate_atr(candles, period=ATR_PERIOD):
+    ranges = []
+
+    for i in range(1, len(candles)):
+        high = float(candles[i][2])
+        low = float(candles[i][3])
+        previous_close = float(candles[i - 1][4])
+
+        ranges.append(
+            max(
+                high - low,
+                abs(high - previous_close),
+                abs(low - previous_close),
+            )
         )
 
-    # Проверяем получение рыночных данных Binance.
-    response = requests.get(
-        f"{BINANCE_URL}/api/v3/ticker/price",
-        params={"symbol": "BTCUSDT"},
-        timeout=20,
+    if len(ranges) < period:
+        return None
+
+    return sum(ranges[-period:]) / period
+
+
+def find_impulses(symbol):
+    candles = get_klines(symbol)
+
+    if len(candles) < 30:
+        return []
+
+    atr = calculate_atr(candles)
+    if not atr or atr <= 0:
+        return []
+
+    setups = []
+
+    for length in IMPULSE_CANDLES:
+        recent = candles[-length:]
+
+        start = float(recent[0][1])
+        end = float(recent[-1][4])
+
+        if start <= 0:
+            continue
+
+        move = end - start
+        move_abs = abs(move)
+
+        if move_abs < atr * MIN_IMPULSE_ATR:
+            continue
+
+        # Эффективность: чистое движение относительно суммы
+        # изменений закрытия внутри импульса.
+        close_changes = [
+            abs(float(recent[i][4]) - float(recent[i - 1][4]))
+            for i in range(1, len(recent))
+        ]
+        path = sum(close_changes) + abs(
+            float(recent[0][4]) - float(recent[0][1])
+        )
+        efficiency = move_abs / path if path > 0 else 0
+
+        if efficiency < MIN_EFFICIENCY:
+            continue
+
+        high = max(float(c[2]) for c in recent)
+        low = min(float(c[3]) for c in recent)
+        span = high - low
+
+        if span <= 0:
+            continue
+
+        if move > 0:
+            direction = "LONG"
+            entry = high - span * 0.618
+            stop = high - span * 0.786
+            risk = entry - stop
+            tp3 = entry + 3 * risk
+            tp4 = entry + 4 * risk
+        else:
+            direction = "SHORT"
+            entry = low + span * 0.618
+            stop = low + span * 0.786
+            risk = stop - entry
+            tp3 = entry - 3 * risk
+            tp4 = entry - 4 * risk
+
+        if risk <= 0:
+            continue
+
+        setups.append({
+            "symbol": symbol,
+            "direction": direction,
+            "move_pct": move_abs / start * 100,
+            "length": length,
+            "entry": entry,
+            "stop": stop,
+            "tp3": tp3,
+            "tp4": tp4,
+            "candle_time": int(recent[-1][0]),
+        })
+
+    if not setups:
+        return []
+
+    # Оставляем самый сильный найденный импульс на одну монету.
+    setups.sort(key=lambda s: s["move_pct"], reverse=True)
+    return [setups[0]]
+
+
+def format_price(value):
+    return f"{value:.8f}".rstrip("0").rstrip(".")
+
+
+def format_signal(s):
+    symbol = s["symbol"]
+    chart_url = f"https://www.binance.com/en/futures/{symbol}"
+    direction = "LONG 🟢" if s["direction"] == "LONG" else "SHORT 🔴"
+
+    return (
+        "📊 НОВЫЙ СЕТАП — ПРОВЕРЬ НА ГРАФИКЕ\n\n"
+        f"Монета: {symbol}\n"
+        f'🔗 <a href="{chart_url}">ОТКРЫТЬ ГРАФИК BINANCE FUTURES</a>\n'
+        f"Направление: {direction}\n"
+        f"Импульс: {s['move_pct']:.3f}% ({s['length']} свечи)\n"
+        f"Вход 0.618: {format_price(s['entry'])}\n"
+        f"Стоп 0.786: {format_price(s['stop'])}\n"
+        f"TP 1:3: {format_price(s['tp3'])}\n"
+        f"TP 1:4: {format_price(s['tp4'])}\n\n"
+        "Это кандидат на сетап, не подтверждённый вход."
     )
-    response.raise_for_status()
-    btc_price = response.json()["price"]
 
-    # Проверяем отправку сообщения в Telegram.
-    chart_url = "https://www.binance.com/en/futures/BTCUSDT"
 
-    message = (
-        "✅ ПРОВЕРКА БОТА\n\n"
-        f"BTCUSDT: {btc_price}\n"
-        f'🔗 <a href="{chart_url}">ОТКРЫТЬ BINANCE FUTURES</a>\n\n'
-        "Binance и Telegram доступны."
-    )
-
-    tg_response = requests.post(
+def send_telegram(message):
+    response = session.post(
         f"https://api.telegram.org/bot{TOKEN}/sendMessage",
         data={
             "chat_id": CHAT_ID,
@@ -41,13 +201,59 @@ def main():
         },
         timeout=20,
     )
-    tg_response.raise_for_status()
+    response.raise_for_status()
 
-    result = tg_response.json()
+    result = response.json()
     if not result.get("ok"):
-        raise RuntimeError(f"Ошибка Telegram: {result}")
+        raise RuntimeError(f"Telegram API error: {result}")
 
-    print("Проверка успешна.")
+
+def load_sent():
+    try:
+        with open("sent_signals.txt", "r", encoding="utf-8") as f:
+            return set(line.strip() for line in f if line.strip())
+    except FileNotFoundError:
+        return set()
+
+
+def save_sent(sent):
+    with open("sent_signals.txt", "w", encoding="utf-8") as f:
+        for item in sorted(sent):
+            f.write(item + "\n")
+
+
+def main():
+    if not TOKEN or not CHAT_ID:
+        raise RuntimeError(
+            "Проверь GitHub Secrets: TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID."
+        )
+
+    sent = load_sent()
+    symbols = get_top_symbols()
+    print(f"Сканируем {len(symbols)} пар на таймфрейме {TIMEFRAME}")
+
+    for symbol in symbols:
+        try:
+            setups = find_impulses(symbol)
+
+            for s in setups:
+                signal_id = (
+                    f"{s['symbol']}:{s['direction']}:{s['candle_time']}"
+                )
+
+                if signal_id in sent:
+                    continue
+
+                send_telegram(format_signal(s))
+                sent.add(signal_id)
+                save_sent(sent)
+                print(f"Отправлен сетап: {symbol} {s['direction']}")
+
+        except Exception as error:
+            print(f"Ошибка для {symbol}: {error}")
+
+    print("Сканирование завершено.")
+
 
 if __name__ == "__main__":
     main()
