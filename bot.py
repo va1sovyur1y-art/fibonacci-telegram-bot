@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 BASE_URL = "https://data-api.binance.vision"
 TIMEFRAME = "15m"
 TOP_N = 20
-ATR_PERIOD = 14
+ATR_PERIOD = 14з
 MIN_IMPULSE_ATR = 2.0
 MIN_EFFICIENCY = 0.55
 
@@ -168,30 +168,28 @@ def find_setup(symbol):
 
 
 def format_signal(s):
-    price = lambda x: f"{x:.8f}".rstrip("0").rstrip(".")
+price = lambda x: f"{x:.8f}".rstrip("0").rstrip(".")
 
-    direction = (
-        "LONG 🟢"
-        if s["direction"] == "LONG"
-        else "SHORT 🔴"
-    )
+direction = (
+    "LONG 🟢"
+    if s["direction"] == "LONG"
+    else "SHORT 🔴"
+)
 
-    symbol = s["symbol"]
+symbol = s["symbol"]
 chart_url = f"https://www.binance.com/en/futures/{symbol}"
 
-    chart_url = f"https://www.binance.com/en/futures/{pair}"
-
-    return (
-        "📊 НОВЫЙ СЕТАП — ПРОВЕРЬ НА ГРАФИКЕ\n\n"
-        f"Монета: <a href=\"{chart_url}\">{symbol}</a>\n"
-        f"Направление: {direction}\n"
-        f"Импульс: {s['move_pct']:.3f}% ({s['length']} свечи)\n"
-        f"Вход 0.618: {price(s['entry'])}\n"
-        f"Стоп 0.786: {price(s['stop'])}\n"
-        f"TP 1:3: {price(s['tp3'])}\n"
-        f"TP 1:4: {price(s['tp4'])}\n\n"
-        "Это кандидат на сетап, не подтверждённый вход."
-    )
+return (
+    "📊 НОВЫЙ СЕТАП — ПРОВЕРЬ НА ГРАФИКЕ\n\n"
+    f"Монета: <a href=\"{chart_url}\">{symbol}</a>\n"
+    f"Направление: {direction}\n"
+    f"Импульс: {s['move_pct']:.3f}% ({s['length']} свечи)\n"
+    f"Вход 0.618: {price(s['entry'])}\n"
+    f"Стоп 0.786: {price(s['stop'])}\n"
+    f"TP 1:3: {price(s['tp3'])}\n"
+    f"TP 1:4: {price(s['tp4'])}\n\n"
+    "Это кандидат на сетап, не подтверждённый вход."
+)
 
 
 def main():
