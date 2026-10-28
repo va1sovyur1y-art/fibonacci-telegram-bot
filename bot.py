@@ -250,7 +250,7 @@ def main():
                 if signal_id in sent:
                     continue
 
-                                keyboard = {
+                                keyboard =                 keyboard = {
                     "inline_keyboard": [[
                         {
                             "text": "📊 Рассчитать маржу",
@@ -266,6 +266,7 @@ def main():
 
                 sent.add(signal_id)
                 save_sent(sent)
+                print(f"Отправлен сетап: {symbol} {s['direction']}")
                 print(f"Отправлен сетап: {symbol} {s['direction']}")
 
         except Exception as error:
