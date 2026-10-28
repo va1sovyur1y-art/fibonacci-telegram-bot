@@ -33,7 +33,7 @@ def send_telegram(text):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     response = session.post(
         url,
-        data={"chat_id": CHAT_ID, "text": text},
+        data={"chat_id": CHAT_ID, "text": text, "parse_mode": "HTML"},
         timeout=20
     )
     response.raise_for_status()
@@ -164,18 +164,29 @@ def find_setup(symbol):
 
 
 def format_signal(s):
-    price = lambda x: f"{x:.8g}"
+    price = lambda x: f"{x:.8f}".rstrip("0").rstrip(".")
+
+    direction = (
+        "LONG 🟢"
+        if s["direction"] == "LONG"
+        else "SHORT 🔴"
+    )
+
+    symbol = s["symbol"]
+    pair = symbol.removesuffix("USDT") + "_USDT"
+
+    chart_url = f"https://www.binance.com/en/futures/{pair}"
+
     return (
-        f"🔎 КАНДИДАТ НА СДЕЛКУ: {s['symbol']}\n"
-        f"Направление: {s['direction']}\n"
-        f"Импульс: {s['move_pct']:.2f}% за {s['length']} свечи\n\n"
+        "📊 НОВЫЙ СЕТАП — ПРОВЕРЬ НА ГРАФИКЕ\n\n"
+        f"Монета: <a href=\"{chart_url}\">{symbol}</a>\n"
+        f"Направление: {direction}\n"
+        f"Импульс: {s['move_pct']:.3f}% ({s['length']} свечи)\n"
         f"Вход 0.618: {price(s['entry'])}\n"
         f"Стоп 0.786: {price(s['stop'])}\n"
         f"TP 1:3: {price(s['tp3'])}\n"
-        f"TP 1:4: {price(s['tp4'])}\n"
-        f"Текущая цена: {price(s['current'])}\n\n"
-        "Статус: ОЖИДАНИЕ ОТКАТА\n"
-        "Это кандидат, а не подтверждённый вход."
+        f"TP 1:4: {price(s['tp4'])}\n\n"
+        "Это кандидат на сетап, не подтверждённый вход."
     )
 
 
