@@ -224,21 +224,6 @@
     "candle_time": 1793236500000,
     "status": "alerted"
   },
-  "SPCXBUSDT": {
-    "symbol": "SPCXBUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.7756232686980641,
-    "length": 5,
-    "high": 144.51,
-    "low": 143.28,
-    "entry": 144.04014,
-    "alert_level": 143.89499999999998,
-    "stop": 144.24678,
-    "tp3": 143.42022000000003,
-    "tp4": 143.21358000000004,
-    "candle_time": 1793237400000,
-    "status": "waiting"
-  },
   "UNIUSDT": {
     "symbol": "UNIUSDT",
     "direction": "SHORT",
@@ -267,6 +252,21 @@
     "tp3": 1.0000456000000002,
     "tp4": 0.9999784000000003,
     "candle_time": 1793237400000,
+    "status": "waiting"
+  },
+  "SPCXBUSDT": {
+    "symbol": "SPCXBUSDT",
+    "direction": "LONG",
+    "move_pct": 0.7695536588778469,
+    "length": 9,
+    "high": 144.12,
+    "low": 142.94,
+    "entry": 143.39076,
+    "alert_level": 143.53,
+    "stop": 143.19252,
+    "tp3": 143.98548,
+    "tp4": 144.18372,
+    "candle_time": 1793249100000,
     "status": "waiting"
   }
 }
