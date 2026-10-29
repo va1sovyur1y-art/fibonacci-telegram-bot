@@ -298,5 +298,20 @@
     "tp4": 0.43941279999999994,
     "candle_time": 1793288700000,
     "status": "waiting"
+  },
+  "PUMPUSDT": {
+    "symbol": "PUMPUSDT",
+    "direction": "LONG",
+    "move_pct": 3.3799008562415493,
+    "length": 6,
+    "high": 0.004656,
+    "low": 0.004438,
+    "entry": 0.004521276,
+    "alert_level": 0.004547000000000001,
+    "stop": 0.004484652,
+    "tp3": 0.004631148,
+    "tp4": 0.004667772,
+    "candle_time": 1793292300000,
+    "status": "waiting"
   }
 }
