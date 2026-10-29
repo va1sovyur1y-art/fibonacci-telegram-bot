@@ -268,5 +268,20 @@
     "tp4": 144.18372,
     "candle_time": 1793249100000,
     "status": "waiting"
+  },
+  "XAUTUSDT": {
+    "symbol": "XAUTUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.4449393714427126,
+    "length": 4,
+    "high": 4041.7,
+    "low": 4020.32,
+    "entry": 4033.53284,
+    "alert_level": 4031.01,
+    "stop": 4037.12468,
+    "tp3": 4022.7573199999997,
+    "tp4": 4019.1654799999997,
+    "candle_time": 1793253600000,
+    "status": "waiting"
   }
 }
