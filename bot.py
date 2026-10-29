@@ -5,7 +5,6 @@ import requests
 BASE_URL = "https://data-api.binance.vision"
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
-ACCOUNT_BALANCE_USDT = float(os.environ.get("ACCOUNT_BALANCE_USDT", "0"))
 LEVERAGE = 10
 
 TIMEFRAME = "15m"
@@ -17,6 +16,8 @@ IMPULSE_MAX_CANDLES = 12
 TOP_SYMBOLS = 20
 ACTIVE_FILE = "active_setups.json"
 SENT_FILE = "sent_signals.txt"
+UPDATES_FILE = "telegram_update_offset.txt"
+PENDING_FILE = "position_requests.json"
 
 STABLE_BASES = {
     "USDT", "USDC", "USD1", "FDUSD", "TUSD", "DAI", "USDE",
@@ -215,7 +216,9 @@ def format_alert(setup, price, entry_already_passed):
         f"{sizing_note}\n\n"
         "⚠️ Расчёт приблизительный: комиссии и проскальзывание не учтены. Проверь размер перед входом."
     )
+    sizing_data = f"size:{symbol}:{setup['direction']}:{format_price(setup['entry'])}:{format_price(setup['stop'])}"
     keyboard = {"inline_keyboard": [
+        [{"text": "🧮 Рассчитать размер позиции", "callback_data": sizing_data}],
         [{"text": "📊 Binance Futures", "url": futures_url}],
         [{"text": "📈 Открыть график", "url": chart_url}],
     ]}
@@ -298,6 +301,7 @@ def send_test_alert_if_requested():
         "Если ты видишь это сообщение, доставка в Telegram работает."
     )
     keyboard = {"inline_keyboard": [
+        [{"text": "🧮 Рассчитать размер позиции (ТЕСТ)", "callback_data": "size:BTCUSDT:LONG:66600:66300"}],
         [{"text": "📊 Binance Futures", "url": "https://www.binance.com/en/futures/BTCUSDT"}],
         [{"text": "📈 Открыть BTCUSDT на TradingView", "url": "https://www.tradingview.com/chart/?symbol=BINANCE:BTCUSDT"}],
     ]}
@@ -306,10 +310,98 @@ def send_test_alert_if_requested():
     print("Тестовое уведомление отправлено в Telegram.")
 
 
+
+def tg(method, payload):
+    r = session.post(f"https://api.telegram.org/bot{TOKEN}/{method}", json=payload, timeout=35)
+    r.raise_for_status()
+    data = r.json()
+    if not data.get("ok"):
+        raise RuntimeError(str(data))
+    return data["result"]
+
+
+def send_text(chat_id, text, keyboard=None):
+    tg("sendMessage", {"chat_id": chat_id, "text": text, "reply_markup": keyboard or {"inline_keyboard": []}, "disable_web_page_preview": True})
+
+
+def process_telegram_updates():
+    try:
+        with open(UPDATES_FILE, "r", encoding="utf-8") as f:
+            offset = int(f.read().strip() or "0")
+    except (FileNotFoundError, ValueError):
+        offset = 0
+    pending = load_json(PENDING_FILE, {})
+    updates = tg("getUpdates", {"offset": offset, "timeout": 2, "allowed_updates": ["message", "callback_query"]})
+    for update in updates:
+        uid = update["update_id"]
+        try:
+            cb = update.get("callback_query")
+            if cb:
+                tg("answerCallbackQuery", {"callback_query_id": cb["id"]})
+                data = cb.get("data", "")
+                user_id = str(cb.get("from", {}).get("id", ""))
+                chat_id = str(cb.get("message", {}).get("chat", {}).get("id", ""))
+                if not chat_id or (CHAT_ID and chat_id != str(CHAT_ID)):
+                    continue
+                if data.startswith("size:"):
+                    parts = data.split(":")
+                    if len(parts) != 5:
+                        continue
+                    _, symbol, direction, entry, stop = parts
+                    pending[user_id] = {"chat_id": chat_id, "symbol": symbol, "direction": direction, "entry": float(entry), "stop": float(stop), "stage": "balance"}
+                    send_text(chat_id, f"🧮 {symbol} {direction}\nВход: {entry}\nСтоп: {stop}\n\nОтправь баланс фьючерсного счёта в USDT одним числом, например 250.")
+                elif data.startswith("risk:") and user_id in pending:
+                    request = pending[user_id]
+                    if request.get("stage") != "risk":
+                        send_text(chat_id, "Сначала отправь баланс счёта.")
+                        continue
+                    risk = float(data.split(":")[1])
+                    balance = float(request["balance"])
+                    distance = abs(request["entry"] - request["stop"])
+                    if balance <= 0 or distance <= 0:
+                        send_text(chat_id, "Не удалось рассчитать: проверь баланс и стоп.")
+                        pending.pop(user_id, None)
+                        continue
+                    qty = balance * risk / 100 / distance
+                    notional = qty * request["entry"]
+                    margin = notional / LEVERAGE
+                    send_text(chat_id, f"📐 РАСЧЁТ — {request['symbol']} {request['direction']}\nБаланс: {format_price(balance)} USDT\nРиск: {risk:g}% = {format_price(balance*risk/100)} USDT\nВход: {format_price(request['entry'])}\nСтоп: {format_price(request['stop'])}\n\nКоличество: {format_price(qty)} {request['symbol'][:-4]}\nОбъём позиции: {format_price(notional)} USDT\nМаржа при ×{LEVERAGE}: ≈ {format_price(margin)} USDT\nУбыток при стопе: ≈ {format_price(balance*risk/100)} USDT\n\nБез комиссий и проскальзывания; проверь шаг количества и параметры контракта.")
+                    pending.pop(user_id, None)
+            else:
+                msg = update.get("message", {})
+                chat_id = str(msg.get("chat", {}).get("id", ""))
+                user_id = str(msg.get("from", {}).get("id", ""))
+                text = (msg.get("text") or "").strip()
+                if not chat_id or (CHAT_ID and chat_id != str(CHAT_ID)) or not text:
+                    continue
+                request = pending.get(user_id)
+                if request and request.get("stage") == "balance":
+                    try:
+                        balance = float(text.replace(",", ".").replace(" ", ""))
+                        if balance <= 0 or balance > 1e12:
+                            raise ValueError()
+                    except ValueError:
+                        send_text(chat_id, "Введи баланс положительным числом в USDT, например 250.")
+                    else:
+                        request["balance"] = balance
+                        request["stage"] = "risk"
+                        send_text(chat_id, f"Баланс принят: {format_price(balance)} USDT. Выбери риск:", {"inline_keyboard": [[{"text": "Риск 1,5%", "callback_data": "risk:1.5:ok"}, {"text": "Риск 2%", "callback_data": "risk:2:ok"}]]})
+                elif text == "/start":
+                    send_text(chat_id, "В сигнале нажми «Рассчитать размер позиции», отправь баланс в USDT и выбери риск 1,5% или 2%. Плечо для маржи — ×10.")
+        except Exception as e:
+            print(f"Ошибка обработки Telegram update {uid}: {e}")
+        finally:
+            offset = uid + 1
+    with open(UPDATES_FILE, "w", encoding="utf-8") as f:
+        f.write(str(offset))
+    save_json(PENDING_FILE, pending)
+
+
 def main():
     if not TOKEN or not CHAT_ID:
         raise RuntimeError("Проверь GitHub Secrets: TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID.")
 
+    process_telegram_updates()
     send_test_alert_if_requested()
     print("Запуск Fibonacci Telegram Scanner")
     active = load_json(ACTIVE_FILE, {})
