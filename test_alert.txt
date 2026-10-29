@@ -1,0 +1,1 @@
+send one test message on next run
