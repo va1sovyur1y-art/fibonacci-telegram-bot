@@ -117,7 +117,7 @@
     "tp3": 1.0005316,
     "tp4": 1.0006324,
     "candle_time": 1793271600000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "HYPEUSDT": {
     "symbol": "HYPEUSDT",
@@ -148,21 +148,6 @@
     "tp4": 289.00912000000005,
     "candle_time": 1793273400000,
     "status": "waiting"
-  },
-  "ZECUSDT": {
-    "symbol": "ZECUSDT",
-    "direction": "LONG",
-    "move_pct": 3.9325092143626144,
-    "length": 6,
-    "high": 1325.0,
-    "low": 1270.32,
-    "entry": 1291.20776,
-    "alert_level": 1297.6599999999999,
-    "stop": 1282.02152,
-    "tp3": 1318.76648,
-    "tp4": 1327.95272,
-    "candle_time": 1793286000000,
-    "status": "missed"
   },
   "WLDUSDT": {
     "symbol": "WLDUSDT",
@@ -342,6 +327,36 @@
     "tp3": 141.9584199999999,
     "tp4": 141.53337999999988,
     "candle_time": 1793304900000,
+    "status": "waiting"
+  },
+  "ZECUSDT": {
+    "symbol": "ZECUSDT",
+    "direction": "SHORT",
+    "move_pct": 5.766717245316466,
+    "length": 12,
+    "high": 1334.34,
+    "low": 1207.0,
+    "entry": 1285.69612,
+    "alert_level": 1270.67,
+    "stop": 1307.08924,
+    "tp3": 1221.5167600000002,
+    "tp4": 1200.1236400000003,
+    "candle_time": 1793307600000,
+    "status": "alerted"
+  },
+  "ADAUSDT": {
+    "symbol": "ADAUSDT",
+    "direction": "SHORT",
+    "move_pct": 5.206286836935166,
+    "length": 12,
+    "high": 0.2038,
+    "low": 0.1875,
+    "entry": 0.1975734,
+    "alert_level": 0.19565,
+    "stop": 0.2003118,
+    "tp3": 0.1893582,
+    "tp4": 0.1866198,
+    "candle_time": 1793307600000,
     "status": "waiting"
   }
 }
