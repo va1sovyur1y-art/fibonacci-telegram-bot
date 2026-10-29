@@ -134,21 +134,6 @@
     "candle_time": 1793234700000,
     "status": "waiting"
   },
-  "GOOGLBUSDT": {
-    "symbol": "GOOGLBUSDT",
-    "direction": "LONG",
-    "move_pct": 1.828995771306767,
-    "length": 12,
-    "high": 296.46,
-    "low": 290.01,
-    "entry": 292.4739,
-    "alert_level": 293.235,
-    "stop": 291.39029999999997,
-    "tp3": 295.72470000000015,
-    "tp4": 296.8083000000002,
-    "candle_time": 1793234700000,
-    "status": "alerted"
-  },
   "WLDUSDT": {
     "symbol": "WLDUSDT",
     "direction": "SHORT",
@@ -192,7 +177,7 @@
     "tp3": 1355.85,
     "tp4": 1349.1299999999999,
     "candle_time": 1793236500000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "SOXLBUSDT": {
     "symbol": "SOXLBUSDT",
@@ -236,21 +221,6 @@
     "stop": 7.258332,
     "tp3": 7.149468,
     "tp4": 7.122252,
-    "candle_time": 1793237400000,
-    "status": "waiting"
-  },
-  "UUSDT": {
-    "symbol": "UUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.029991002699186944,
-    "length": 7,
-    "high": 1.0004,
-    "low": 1.0,
-    "entry": 1.0002472,
-    "alert_level": 1.0002,
-    "stop": 1.0003144,
-    "tp3": 1.0000456000000002,
-    "tp4": 0.9999784000000003,
     "candle_time": 1793237400000,
     "status": "waiting"
   },
