@@ -207,7 +207,7 @@
     "tp3": 7.3650699999999985,
     "tp4": 7.406229999999998,
     "candle_time": 1793286000000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "SOXLBUSDT": {
     "symbol": "SOXLBUSDT",
@@ -222,7 +222,7 @@
     "tp3": 103.20994000000003,
     "tp4": 104.18266000000004,
     "candle_time": 1793286000000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "ETHUSDT": {
     "symbol": "ETHUSDT",
@@ -284,21 +284,6 @@
     "candle_time": 1793288700000,
     "status": "missed"
   },
-  "PUMPUSDT": {
-    "symbol": "PUMPUSDT",
-    "direction": "LONG",
-    "move_pct": 3.3799008562415493,
-    "length": 6,
-    "high": 0.004656,
-    "low": 0.004438,
-    "entry": 0.004521276,
-    "alert_level": 0.004547000000000001,
-    "stop": 0.004484652,
-    "tp3": 0.004631148,
-    "tp4": 0.004667772,
-    "candle_time": 1793292300000,
-    "status": "missed"
-  },
   "WLDUSDT": {
     "symbol": "WLDUSDT",
     "direction": "SHORT",
@@ -312,6 +297,36 @@
     "tp3": 0.42970480000000005,
     "tp4": 0.42748720000000007,
     "candle_time": 1793294100000,
+    "status": "waiting"
+  },
+  "PUMPUSDT": {
+    "symbol": "PUMPUSDT",
+    "direction": "SHORT",
+    "move_pct": 3.3627937055399846,
+    "length": 8,
+    "high": 0.004656,
+    "low": 0.004452,
+    "entry": 0.004578072000000001,
+    "alert_level": 0.004554000000000001,
+    "stop": 0.004612344,
+    "tp3": 0.004475256000000003,
+    "tp4": 0.004440984000000004,
+    "candle_time": 1793296800000,
+    "status": "waiting"
+  },
+  "DOGEUSDT": {
+    "symbol": "DOGEUSDT",
+    "direction": "SHORT",
+    "move_pct": 1.5951527142327184,
+    "length": 8,
+    "high": 0.0809,
+    "low": 0.07925,
+    "entry": 0.0802697,
+    "alert_level": 0.08007500000000001,
+    "stop": 0.0805469,
+    "tp3": 0.07943809999999998,
+    "tp4": 0.07916089999999998,
+    "candle_time": 1793296800000,
     "status": "waiting"
   }
 }
