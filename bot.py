@@ -409,9 +409,16 @@ def main():
                 continue
 
             if setup.get("status") == "waiting" and alert_reached(setup, price):
+                if entry_reached(setup, price):
+                    # Сетап уже прошёл лимитный вход: не отправляем запоздалый сигнал.
+                    setup["status"] = "missed"
+                    save_json(ACTIVE_FILE, active)
+                    print(f"Пропущен устаревший сигнал: {symbol} {setup['direction']} — цена уже прошла 0.618")
+                    continue
+
                 signal_id = f"{symbol}:{setup['direction']}:{setup['candle_time']}:fib50"
                 if signal_id not in sent:
-                    message, keyboard = format_alert(setup, price, entry_reached(setup, price))
+                    message, keyboard = format_alert(setup, price, False)
                     send_telegram(message, keyboard)
                     sent.add(signal_id)
                     save_sent(sent)
@@ -441,11 +448,18 @@ def main():
             save_json(ACTIVE_FILE, active)
             print(f"Найден импульс: {symbol} {setup['direction']} ({setup['length']} свечей)")
 
-            # Если откат до 0.5 уже произошёл к моменту обнаружения, уведомляем сразу.
+            # Не отправляем сигнал, если цена уже прошла лимитный вход 0.618.
+            # Такой сетап фиксируем как пропущенный, чтобы не присылать запоздалое уведомление.
             if alert_reached(setup, price):
+                if entry_reached(setup, price):
+                    active[symbol]["status"] = "missed"
+                    save_json(ACTIVE_FILE, active)
+                    print(f"Пропущен устаревший сигнал: {symbol} {setup['direction']} — цена уже прошла 0.618")
+                    continue
+
                 signal_id = f"{symbol}:{setup['direction']}:{setup['candle_time']}:fib50"
                 if signal_id not in sent:
-                    message, keyboard = format_alert(setup, price, entry_reached(setup, price))
+                    message, keyboard = format_alert(setup, price, False)
                     send_telegram(message, keyboard)
                     sent.add(signal_id)
                     save_sent(sent)
