@@ -1,277 +1,355 @@
 import os
-import json
-import time
-import logging
-from datetime import datetime, timezone
-
 import requests
-import pandas as pd
-import numpy as np
 
-BASE_URL = "https://api.binance.com"
+BASE_URL = "https://data-api.binance.vision"
+
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+
 TIMEFRAME = "15m"
-TOP_SYMBOLS_LIMIT = 20
 ATR_PERIOD = 14
 MIN_IMPULSE_ATR = 2.0
 MIN_EFFICIENCY = 0.55
-IMPULSE_CANDLES = [3, 4, 5]
-ENTRY_LEVEL = 0.618
-STOP_LEVEL = 0.786
-SETUP_MAX_AGE_CANDLES = 16
-STATE_FILE = "bot_state.json"
+IMPULSE_CANDLES = (3, 4, 5)
+TOP_SYMBOLS = 20
 
-TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-
-logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
-log = logging.getLogger("fibonacci-bot")
-session = requests.Session()
-session.headers.update({"User-Agent": "FibonacciTelegramBot/1.0"})
-
-EXCLUDED_BASES = {
-    "USDC", "FDUSD", "TUSD", "USDP", "DAI", "USDE", "USDD",
-    "BUSD", "UST", "USTC", "EUR", "EURC", "XAUT"
+# Стейблкоины, которые не должны быть базовой монетой.
+STABLE_BASES = {
+    "USDT", "USDC", "USD1", "FDUSD", "TUSD",
+    "DAI", "USDE", "USDS", "PYUSD", "USDP",
+    "EURC", "USTC", "BUSD"
 }
-LEVERAGED_SUFFIXES = ("UP", "DOWN", "BULL", "BEAR")
+
+# Исключаем токены с плечом UP/DOWN/BULL/BEAR.
+LEVERAGED_SUFFIXES = ("UPUSDT", "DOWNUSDT", "BULLUSDT", "BEARUSDT")
+
+session = requests.Session()
+session.headers.update({
+    "User-Agent": "FibonacciTelegramScanner/1.0"
+})
 
 
-def api_get(path, params=None):
-    response = session.get(BASE_URL + path, params=params, timeout=20)
+def get_json(url, params=None):
+    response = session.get(
+        url,
+        params=params,
+        timeout=20
+    )
     response.raise_for_status()
     return response.json()
 
 
-def get_top_symbols(limit=TOP_SYMBOLS_LIMIT):
-    exchange_info = api_get("/api/v3/exchangeInfo")
-    tickers = api_get("/api/v3/ticker/24hr")
-    ticker_map = {item["symbol"]: item for item in tickers}
-    eligible = []
-    for item in exchange_info["symbols"]:
-        if item.get("status") != "TRADING" or item.get("quoteAsset") != "USDT":
+def get_top_symbols():
+    data = get_json(f"{BASE_URL}/api/v3/ticker/24hr")
+    symbols = []
+
+    for item in data:
+        symbol = item.get("symbol", "")
+
+        if not symbol.endswith("USDT"):
             continue
-        if not item.get("isSpotTradingAllowed", False):
+
+        base = symbol[:-4]
+
+        if base in STABLE_BASES:
             continue
-        symbol = item["symbol"]
-        base = item.get("baseAsset", "")
-        if base in EXCLUDED_BASES or any(base.endswith(s) for s in LEVERAGED_SUFFIXES):
+
+        if any(symbol.endswith(x) for x in LEVERAGED_SUFFIXES):
             continue
-        if symbol not in ticker_map:
-            continue
+
         try:
-            volume = float(ticker_map[symbol].get("quoteVolume", 0))
-        except (TypeError, ValueError):
+            volume = float(item["quoteVolume"])
+        except (ValueError, TypeError, KeyError):
             continue
-        eligible.append((symbol, volume))
-    eligible.sort(key=lambda x: x[1], reverse=True)
-    return [x[0] for x in eligible[:limit]]
+
+        symbols.append((symbol, volume))
+
+    symbols.sort(key=lambda x: x[1], reverse=True)
+
+    return [symbol for symbol, _ in symbols[:TOP_SYMBOLS]]
 
 
-def get_closed_candles(symbol, limit=100):
-    raw = api_get("/api/v3/klines", {"symbol": symbol, "interval": TIMEFRAME, "limit": limit})
-    now_ms = int(time.time() * 1000)
-    raw = [r for r in raw if int(r[6]) < now_ms]
-    columns = [
-        "open_time", "open", "high", "low", "close", "volume", "close_time",
-        "quote_volume", "trades", "taker_buy_base", "taker_buy_quote", "ignore"
-    ]
-    df = pd.DataFrame(raw, columns=columns)
-    if df.empty:
-        return df
-    for col in ["open", "high", "low", "close", "volume"]:
-        df[col] = df[col].astype(float)
-    df["open_time"] = pd.to_datetime(df["open_time"], unit="ms", utc=True)
-    df["close_time"] = pd.to_datetime(df["close_time"], unit="ms", utc=True)
-    return df.reset_index(drop=True)
+def get_klines(symbol):
+    data = get_json(
+        f"{BASE_URL}/api/v3/klines",
+        {
+            "symbol": symbol,
+            "interval": TIMEFRAME,
+            "limit": 100,
+        },
+    )
+
+    # Не используем последнюю незакрытую свечу.
+    return data[:-1]
 
 
-def find_impulses(df):
-    if len(df) < ATR_PERIOD + max(IMPULSE_CANDLES) + 2:
+def calculate_atr(candles, period=ATR_PERIOD):
+    ranges = []
+
+    for i in range(1, len(candles)):
+        high = float(candles[i][2])
+        low = float(candles[i][3])
+        previous_close = float(candles[i - 1][4])
+
+        ranges.append(
+            max(
+                high - low,
+                abs(high - previous_close),
+                abs(low - previous_close),
+            )
+        )
+
+    if len(ranges) < period:
+        return None
+
+    return sum(ranges[-period:]) / period
+
+
+def find_impulses(symbol):
+    candles = get_klines(symbol)
+
+    if len(candles) < 30:
         return []
-    data = df.copy().reset_index(drop=True)
-    prev_close = data["close"].shift(1)
-    tr = pd.concat([
-        data["high"] - data["low"],
-        (data["high"] - prev_close).abs(),
-        (data["low"] - prev_close).abs()
-    ], axis=1).max(axis=1)
-    data["atr"] = tr.rolling(ATR_PERIOD).mean()
-    found = []
-    end = len(data) - 1
+
+    atr = calculate_atr(candles)
+
+    if not atr or atr <= 0:
+        return []
+
+    setups = []
+
     for length in IMPULSE_CANDLES:
-        start = end - length + 1
-        window = data.iloc[start:end + 1]
-        start_price = float(data.iloc[start]["open"])
-        end_price = float(data.iloc[end]["close"])
-        atr = float(data.iloc[start]["atr"])
-        if not np.isfinite(atr) or atr <= 0 or start_price <= 0:
+        recent = candles[-length:]
+
+        start = float(recent[0][1])
+        end = float(recent[-1][4])
+
+        if start <= 0:
             continue
-        move = end_price - start_price
-        if move == 0:
+
+        move = end - start
+        move_abs = abs(move)
+
+        if move_abs < atr * MIN_IMPULSE_ATR:
             continue
-        move_pct = move / start_price * 100
-        move_atr = abs(move) / atr
-        if move_atr < MIN_IMPULSE_ATR:
-            continue
-        path = float(window["close"].diff().abs().sum())
-        efficiency = abs(move) / path if path > 0 else 0
+
+        close_changes = [
+            abs(float(recent[i][4]) - float(recent[i - 1][4]))
+            for i in range(1, len(recent))
+        ]
+
+        path = sum(close_changes) + abs(
+            float(recent[0][4]) - float(recent[0][1])
+        )
+
+        efficiency = move_abs / path if path > 0 else 0
+
         if efficiency < MIN_EFFICIENCY:
             continue
-        found.append({
-            "direction": "LONG" if move > 0 else "SHORT",
-            "candles": length,
-            "move_pct": move_pct,
-            "move_atr": move_atr,
-            "efficiency": efficiency,
-            "start_time": data.iloc[start]["open_time"].isoformat(),
-            "end_time": data.iloc[end]["open_time"].isoformat(),
-            "start_price": start_price,
-            "end_price": end_price,
-            "impulse_low": float(window["low"].min()),
-            "impulse_high": float(window["high"].max())
+
+        high = max(float(c[2]) for c in recent)
+        low = min(float(c[3]) for c in recent)
+        span = high - low
+
+        if span <= 0:
+            continue
+
+        if move > 0:
+            direction = "LONG"
+            entry = high - span * 0.618
+            stop = high - span * 0.786
+            risk = entry - stop
+
+            tp3 = entry + 3 * risk
+            tp4 = entry + 4 * risk
+
+        else:
+            direction = "SHORT"
+            entry = low + span * 0.618
+            stop = low + span * 0.786
+            risk = stop - entry
+
+            tp3 = entry - 3 * risk
+            tp4 = entry - 4 * risk
+
+        if risk <= 0:
+            continue
+
+        setups.append({
+            "symbol": symbol,
+            "direction": direction,
+            "move_pct": move_abs / start * 100,
+            "length": length,
+            "entry": entry,
+            "stop": stop,
+            "tp3": tp3,
+            "tp4": tp4,
+            "candle_time": int(recent[-1][0]),
         })
-    return found
 
+    if not setups:
+        return []
 
-def load_state():
-    try:
-        with open(STATE_FILE, "r", encoding="utf-8") as f:
-            state = json.load(f)
-        if not isinstance(state, dict):
-            raise ValueError("bad state")
-        state.setdefault("setups", {})
-        state.setdefault("sent_alerts", [])
-        return state
-    except (FileNotFoundError, json.JSONDecodeError, OSError, ValueError):
-        return {"setups": {}, "sent_alerts": []}
-
-
-def save_state(state):
-    tmp = STATE_FILE + ".tmp"
-    with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(state, f, ensure_ascii=False, indent=2)
-    os.replace(tmp, STATE_FILE)
-
-
-def send_telegram(message):
-    if not TELEGRAM_TOKEN or not CHAT_ID:
-        raise RuntimeError("В GitHub Secrets не заданы TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID.")
-    response = requests.post(
-        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
-        data={"chat_id": CHAT_ID, "text": message},
-        timeout=20
+    # Один наиболее сильный импульс на монету.
+    setups.sort(
+        key=lambda s: s["move_pct"],
+        reverse=True
     )
-    response.raise_for_status()
-    if not response.json().get("ok"):
-        raise RuntimeError("Telegram API вернул ошибку.")
+
+    return [setups[0]]
 
 
-def fmt_price(value):
-    value = float(value)
-    if value >= 1000:
-        return f"{value:.2f}"
-    if value >= 1:
-        return f"{value:.5f}"
-    if value >= 0.01:
-        return f"{value:.6f}"
-    return f"{value:.8f}"
+def format_price(value):
+    return f"{value:.8f}".rstrip("0").rstrip(".")
 
 
-def make_setup(symbol, impulse):
-    low, high = float(impulse["impulse_low"]), float(impulse["impulse_high"])
-    if high <= low:
-        return None
-    size = high - low
-    direction = impulse["direction"]
-    if direction == "LONG":
-        entry = high - size * ENTRY_LEVEL
-        stop = high - size * STOP_LEVEL
-        if float(impulse["end_price"]) <= entry:
-            return None
-        risk = abs(entry - stop)
-        tp3, tp4 = entry + risk * 3, entry + risk * 4
-    else:
-        entry = low + size * ENTRY_LEVEL
-        stop = low + size * STOP_LEVEL
-        if float(impulse["end_price"]) >= entry:
-            return None
-        risk = abs(stop - entry)
-        tp3, tp4 = entry - risk * 3, entry - risk * 4
-    return {
-        "symbol": symbol, "direction": direction, "candles": int(impulse["candles"]),
-        "move_pct": float(impulse["move_pct"]), "entry": float(entry), "stop": float(stop),
-        "tp3": float(tp3), "tp4": float(tp4), "end_time": impulse["end_time"],
-        "status": "WAITING", "last_checked_candle": impulse["end_time"]
+def format_signal(s):
+    symbol = s["symbol"]
+
+    direction = (
+        "LONG 🟢"
+        if s["direction"] == "LONG"
+        else "SHORT 🔴"
+    )
+
+    chart_url = (
+        f"https://www.tradingview.com/chart/"
+        f"?symbol=BINANCE:{symbol}"
+    )
+
+    futures_url = (
+        f"https://www.binance.com/en/futures/{symbol}"
+    )
+
+    message = (
+        "📊 НОВЫЙ СЕТАП — ПРОВЕРЬ НА ГРАФИКЕ\n\n"
+        f"Монета: {symbol}\n"
+        f"Направление: {direction}\n"
+        f"Импульс: {s['move_pct']:.3f}% "
+        f"({s['length']} свечи)\n\n"
+        f"Вход 0.618: {format_price(s['entry'])}\n"
+        f"Стоп 0.786: {format_price(s['stop'])}\n"
+        f"TP 1:3: {format_price(s['tp3'])}\n"
+        f"TP 1:4: {format_price(s['tp4'])}\n\n"
+        "⚠️ Кандидат на сетап, не подтверждённый вход.\n"
+        "Проверь график перед принятием решения."
+    )
+
+    keyboard = {
+        "inline_keyboard": [
+            [
+                {
+                    "text": "📊 Рассчитать маржу",
+                    "url": futures_url
+                }
+            ],
+            [
+                {
+                    "text": "📈 Открыть график",
+                    "url": chart_url
+                }
+            ]
+        ]
     }
 
-
-def setup_key(setup):
-    return f"{setup['symbol']}|{setup['direction']}|{setup['end_time']}"
+    return message, keyboard
 
 
-def setup_message(s):
-    direction = "LONG 🟢" if s["direction"] == "LONG" else "SHORT 🔴"
-    return (
-        "📊 НОВЫЙ СЕТАП — ПРОВЕРЬ НА ГРАФИКЕ\n\n"
-        f"Монета: {s['symbol']}\nНаправление: {direction}\n"
-        f"Импульс: {s['move_pct']:.3f}% ({s['candles']} свечи)\n"
-        f"Вход 0.618: {fmt_price(s['entry'])}\nСтоп 0.786: {fmt_price(s['stop'])}\n"
-        f"TP 1:3: {fmt_price(s['tp3'])}\nTP 1:4: {fmt_price(s['tp4'])}\n\n"
-        "Это кандидат на сетап, не подтверждённый вход."
+def send_telegram(message, keyboard):
+    response = session.post(
+        f"https://api.telegram.org/bot{TOKEN}/sendMessage",
+        json={
+            "chat_id": CHAT_ID,
+            "text": message,
+            "reply_markup": keyboard,
+            "disable_web_page_preview": True,
+        },
+        timeout=20,
     )
 
+    response.raise_for_status()
 
-def bounce_message(s, candle_time, close):
-    direction = "LONG 🟢" if s["direction"] == "LONG" else "SHORT 🔴"
-    return (
-        "🔔 ВОЗМОЖНЫЙ ОТБОЙ ОТ ФИБОНАЧЧИ\n\n"
-        f"Монета: {s['symbol']}\nНаправление: {direction}\n"
-        f"Вход 0.618: {fmt_price(s['entry'])}\nСтоп 0.786: {fmt_price(s['stop'])}\n"
-        f"TP 1:3: {fmt_price(s['tp3'])}\nTP 1:4: {fmt_price(s['tp4'])}\n"
-        f"Закрытие свечи: {fmt_price(close)}\nВремя UTC: {candle_time}\n\n"
-        "Проверь график вручную. Прибыль не гарантируется."
+    result = response.json()
+
+    if not result.get("ok"):
+        raise RuntimeError(
+            f"Telegram API error: {result}"
+        )
+
+
+def load_sent():
+    try:
+        with open("sent_signals.txt", "r", encoding="utf-8") as f:
+            return set(
+                line.strip()
+                for line in f
+                if line.strip()
+            )
+    except FileNotFoundError:
+        return set()
+
+
+def save_sent(sent):
+    with open("sent_signals.txt", "w", encoding="utf-8") as f:
+        for item in sorted(sent):
+            f.write(item + "\n")
+
+
+def main():
+    if not TOKEN or not CHAT_ID:
+        raise RuntimeError(
+            "Проверь GitHub Secrets: "
+            "TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID."
+        )
+
+    print("Запуск Fibonacci Telegram Scanner")
+
+    sent = load_sent()
+    symbols = get_top_symbols()
+
+    print(
+        f"Сканируем {len(symbols)} пар "
+        f"на таймфрейме {TIMEFRAME}"
     )
 
-
-def run_once():
-    state = load_state()
-    symbols = get_top_symbols(TOP_SYMBOLS_LIMIT)
-    log.info("Получен список из %d торговых пар.", len(symbols))
-    new_setups = 0
-    bounce_alerts = 0
-
-    # Проверяем уже сохранённые сетапы только по свечам, закрывшимся после импульса.
-    for key, s in list(state["setups"].items()):
+    for symbol in symbols:
         try:
-            df = get_closed_candles(s["symbol"], limit=100)
-            if df.empty:
-                continue
-            impulse_time = pd.to_datetime(s["end_time"], utc=True)
-            age = int((df.iloc[-1]["open_time"] - impulse_time).total_seconds() / 900)
-            if age > SETUP_MAX_AGE_CANDLES:
-                del state["setups"][key]
-                continue
-            last_checked = pd.to_datetime(s["last_checked_candle"], utc=True)
-            newer = df[(df["open_time"] > impulse_time) & (df["open_time"] > last_checked)]
-            for _, candle in newer.iterrows():
-                lo, hi, close = float(candle["low"]), float(candle["high"]), float(candle["close"])
-                ctime = candle["open_time"].isoformat()
-                if s["direction"] == "LONG":
-                    if lo <= s["stop"]:
-                        del state["setups"][key]
-                        break
-                    if lo <= s["entry"] and close > s["entry"]:
-                        send_telegram(bounce_message(s, ctime, close))
-                        del state["setups"][key]
-                        bounce_alerts += 1
-                        break
-                else:
-                    if hi >= s["stop"]:
-                        del state["setups"][key]
-                        break
-                    if hi >= s["entry"] and close < s["entry"]:
-                        send_telegram(bounce_message(s, ctime, close))
-                        del state["setups"][key]
-                        bounce_alerts += 1
+            setups = find_impulses(symbol)
+
+            for s in setups:
+                signal_id = (
+                    f"{s['symbol']}:"
+                    f"{s['direction']}:"
+                    f"{s['candle_time']}"
+                )
+
+                if signal_id in sent:
+                    print(
+                        f"Уже отправлен: "
+                        f"{symbol} {s['direction']}"
+                    )
+                    continue
+
+                message, keyboard = format_signal(s)
+
+                send_telegram(message, keyboard)
+
+                sent.add(signal_id)
+                save_sent(sent)
+
+                print(
+                    f"Отправлен сетап: "
+                    f"{symbol} {s['direction']}"
+                )
+
+        except Exception as error:
+            print(f"Ошибка для {symbol}: {error}")
+
+    print("Сканирование завершено.")
+
+
+if __name__ == "__main__":
+    main()bounce_alerts += 1
                         break
                 s["last_checked_candle"] = ctime
         except Exception as exc:
