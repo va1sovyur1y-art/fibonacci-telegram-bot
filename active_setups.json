@@ -237,7 +237,7 @@
     "tp3": 2366.4313199999997,
     "tp4": 2376.1114799999996,
     "candle_time": 1793288700000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "SOLUSDT": {
     "symbol": "SOLUSDT",
@@ -252,7 +252,7 @@
     "tp3": 102.44841999999998,
     "tp4": 102.86337999999998,
     "candle_time": 1793288700000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "PEPEUSDT": {
     "symbol": "PEPEUSDT",
@@ -282,22 +282,7 @@
     "tp3": 0.9516281999999999,
     "tp4": 0.9564497999999999,
     "candle_time": 1793288700000,
-    "status": "waiting"
-  },
-  "WLDUSDT": {
-    "symbol": "WLDUSDT",
-    "direction": "LONG",
-    "move_pct": 2.6291079812206544,
-    "length": 4,
-    "high": 0.4387,
-    "low": 0.4255,
-    "entry": 0.4305424,
-    "alert_level": 0.4321,
-    "stop": 0.4283248,
-    "tp3": 0.43719519999999995,
-    "tp4": 0.43941279999999994,
-    "candle_time": 1793288700000,
-    "status": "waiting"
+    "status": "missed"
   },
   "PUMPUSDT": {
     "symbol": "PUMPUSDT",
@@ -312,6 +297,21 @@
     "tp3": 0.004631148,
     "tp4": 0.004667772,
     "candle_time": 1793292300000,
+    "status": "missed"
+  },
+  "WLDUSDT": {
+    "symbol": "WLDUSDT",
+    "direction": "SHORT",
+    "move_pct": 2.4960290447016007,
+    "length": 5,
+    "high": 0.4414,
+    "low": 0.4282,
+    "entry": 0.4363576,
+    "alert_level": 0.4348,
+    "stop": 0.4385752,
+    "tp3": 0.42970480000000005,
+    "tp4": 0.42748720000000007,
+    "candle_time": 1793294100000,
     "status": "waiting"
   }
 }
