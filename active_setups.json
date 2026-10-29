@@ -373,5 +373,20 @@
     "tp4": 10.855450000000006,
     "candle_time": 1793309400000,
     "status": "waiting"
+  },
+  "RLUSDUSDT": {
+    "symbol": "RLUSDUSDT",
+    "direction": "LONG",
+    "move_pct": 0.05994604855631491,
+    "length": 6,
+    "high": 1.0017,
+    "low": 1.0009,
+    "entry": 1.0012056,
+    "alert_level": 1.0013,
+    "stop": 1.0010712,
+    "tp3": 1.0016088000000003,
+    "tp4": 1.0017432000000004,
+    "candle_time": 1793313900000,
+    "status": "waiting"
   }
 }
