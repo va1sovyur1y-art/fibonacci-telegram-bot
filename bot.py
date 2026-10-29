@@ -256,10 +256,39 @@ def entry_reached(setup, price):
     return price <= setup["entry"] if setup["direction"] == "LONG" else price >= setup["entry"]
 
 
+def send_test_alert_if_requested():
+    trigger_file = "test_alert.txt"
+    if not os.path.exists(trigger_file):
+        return
+    # Это отдельное тестовое сообщение, не реальный торговый сигнал.
+    message = (
+        "🧪 ТЕСТОВОЕ УВЕДОМЛЕНИЕ БОТА\n\n"
+        "Монета: BTCUSDT (пример)\n"
+        "Направление: LONG (пример)\n"
+        "Импульс: тестовый\n"
+        "Текущая цена: 67000\n\n"
+        "🔔 Уровень 0.5: 66800\n"
+        "🎯 Лимитный вход 0.618: 66600\n"
+        "🛑 Стоп 0.786: 66300\n"
+        "✅ TP 1:3: 67500\n"
+        "🚀 TP 1:4: 67800\n\n"
+        "Это демонстрационные значения, НЕ реальный сетап.\n"
+        "Если ты видишь это сообщение, доставка в Telegram работает."
+    )
+    keyboard = {"inline_keyboard": [[
+        {"text": "📈 Открыть BTCUSDT на TradingView",
+         "url": "https://www.tradingview.com/chart/?symbol=BINANCE:BTCUSDT"}
+    ]]}
+    send_telegram(message, keyboard)
+    os.remove(trigger_file)
+    print("Тестовое уведомление отправлено в Telegram.")
+
+
 def main():
     if not TOKEN or not CHAT_ID:
         raise RuntimeError("Проверь GitHub Secrets: TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID.")
 
+    send_test_alert_if_requested()
     print("Запуск Fibonacci Telegram Scanner")
     active = load_json(ACTIVE_FILE, {})
     sent = load_sent()
