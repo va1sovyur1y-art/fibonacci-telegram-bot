@@ -222,7 +222,7 @@
     "tp3": 4056.8491199999994,
     "tp4": 4061.875679999999,
     "candle_time": 1793236500000,
-    "status": "waiting"
+    "status": "missed"
   },
   "TRXUSDT": {
     "symbol": "TRXUSDT",
