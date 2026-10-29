@@ -104,21 +104,6 @@
     "candle_time": 1793234700000,
     "status": "waiting"
   },
-  "XAUTUSDT": {
-    "symbol": "XAUTUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.805238975338321,
-    "length": 12,
-    "high": 4063.39,
-    "low": 4030.56,
-    "entry": 4050.84894,
-    "alert_level": 4046.975,
-    "stop": 4056.36438,
-    "tp3": 4034.3026199999995,
-    "tp4": 4028.7871799999994,
-    "candle_time": 1793234700000,
-    "status": "waiting"
-  },
   "SUIUSDT": {
     "symbol": "SUIUSDT",
     "direction": "SHORT",
@@ -177,6 +162,21 @@
     "tp3": 0.4344207999999999,
     "tp4": 0.43321119999999985,
     "candle_time": 1793234700000,
+    "status": "waiting"
+  },
+  "ETHUSDT": {
+    "symbol": "ETHUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.6231373611487317,
+    "length": 10,
+    "high": 2363.98,
+    "low": 2343.01,
+    "entry": 2355.9694600000003,
+    "alert_level": 2353.495,
+    "stop": 2359.49242,
+    "tp3": 2345.400580000001,
+    "tp4": 2341.877620000001,
+    "candle_time": 1793235600000,
     "status": "waiting"
   }
 }
