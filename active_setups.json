@@ -1,19 +1,4 @@
 {
-  "BTCUSDT": {
-    "symbol": "BTCUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.30955775707368155,
-    "length": 6,
-    "high": 81380.01,
-    "low": 81106.14,
-    "entry": 81275.39166,
-    "alert_level": 81243.075,
-    "stop": 81321.40182,
-    "tp3": 81137.36117999998,
-    "tp4": 81091.35101999997,
-    "candle_time": 1793234700000,
-    "status": "waiting"
-  },
   "SOLUSDT": {
     "symbol": "SOLUSDT",
     "direction": "SHORT",
@@ -26,21 +11,6 @@
     "stop": 102.5967,
     "tp3": 101.95830000000001,
     "tp4": 101.79870000000001,
-    "candle_time": 1793234700000,
-    "status": "waiting"
-  },
-  "ZECUSDT": {
-    "symbol": "ZECUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.4630144478373814,
-    "length": 6,
-    "high": 1317.14,
-    "low": 1296.49,
-    "entry": 1309.2517,
-    "alert_level": 1306.815,
-    "stop": 1312.7209,
-    "tp3": 1298.8441,
-    "tp4": 1295.3749,
     "candle_time": 1793234700000,
     "status": "waiting"
   },
@@ -89,21 +59,6 @@
     "candle_time": 1793234700000,
     "status": "waiting"
   },
-  "ENAUSDT": {
-    "symbol": "ENAUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.8474656560871692,
-    "length": 12,
-    "high": 0.2113,
-    "low": 0.2071,
-    "entry": 0.20969559999999998,
-    "alert_level": 0.2092,
-    "stop": 0.21040119999999998,
-    "tp3": 0.20757879999999998,
-    "tp4": 0.20687319999999998,
-    "candle_time": 1793234700000,
-    "status": "waiting"
-  },
   "SUIUSDT": {
     "symbol": "SUIUSDT",
     "direction": "SHORT",
@@ -117,7 +72,7 @@
     "tp3": 0.9401363999999999,
     "tp4": 0.9380195999999998,
     "candle_time": 1793234700000,
-    "status": "waiting"
+    "status": "missed"
   },
   "DOGEUSDT": {
     "symbol": "DOGEUSDT",
@@ -132,7 +87,7 @@
     "tp3": 0.07957005999999998,
     "tp4": 0.07943733999999998,
     "candle_time": 1793234700000,
-    "status": "waiting"
+    "status": "missed"
   },
   "WLDUSDT": {
     "symbol": "WLDUSDT",
@@ -162,7 +117,7 @@
     "tp3": 2345.400580000001,
     "tp4": 2341.877620000001,
     "candle_time": 1793235600000,
-    "status": "waiting"
+    "status": "missed"
   },
   "SNDKBUSDT": {
     "symbol": "SNDKBUSDT",
@@ -179,21 +134,6 @@
     "candle_time": 1793236500000,
     "status": "alerted"
   },
-  "SOXLBUSDT": {
-    "symbol": "SOXLBUSDT",
-    "direction": "SHORT",
-    "move_pct": 2.654867256637172,
-    "length": 4,
-    "high": 102.93,
-    "low": 99.68,
-    "entry": 101.6885,
-    "alert_level": 101.305,
-    "stop": 102.23450000000001,
-    "tp3": 100.05049999999999,
-    "tp4": 99.50449999999998,
-    "candle_time": 1793236500000,
-    "status": "waiting"
-  },
   "TRXUSDT": {
     "symbol": "TRXUSDT",
     "direction": "LONG",
@@ -207,21 +147,6 @@
     "tp3": 0.32983160000000006,
     "tp4": 0.32993240000000007,
     "candle_time": 1793236500000,
-    "status": "alerted"
-  },
-  "UNIUSDT": {
-    "symbol": "UNIUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.9349526554137508,
-    "length": 4,
-    "high": 7.293,
-    "low": 7.131,
-    "entry": 7.231116,
-    "alert_level": 7.212,
-    "stop": 7.258332,
-    "tp3": 7.149468,
-    "tp4": 7.122252,
-    "candle_time": 1793237400000,
     "status": "alerted"
   },
   "XAUTUSDT": {
@@ -314,19 +239,79 @@
     "candle_time": 1793273400000,
     "status": "waiting"
   },
-  "SPCXBUSDT": {
-    "symbol": "SPCXBUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.7413052514895339,
-    "length": 3,
-    "high": 144.54,
-    "low": 142.95,
-    "entry": 143.93262,
-    "alert_level": 143.745,
-    "stop": 144.19974,
-    "tp3": 143.13125999999997,
-    "tp4": 142.86413999999996,
-    "candle_time": 1793273400000,
-    "status": "alerted"
+  "BTCUSDT": {
+    "symbol": "BTCUSDT",
+    "direction": "LONG",
+    "move_pct": 2.0462332343677647,
+    "length": 6,
+    "high": 81589.78,
+    "low": 79937.66,
+    "entry": 80568.76984000001,
+    "alert_level": 80763.72,
+    "stop": 80291.21368,
+    "tp3": 81401.43832000003,
+    "tp4": 81678.99448000004,
+    "candle_time": 1793286000000,
+    "status": "waiting"
+  },
+  "ZECUSDT": {
+    "symbol": "ZECUSDT",
+    "direction": "LONG",
+    "move_pct": 3.9325092143626144,
+    "length": 6,
+    "high": 1325.0,
+    "low": 1270.32,
+    "entry": 1291.20776,
+    "alert_level": 1297.6599999999999,
+    "stop": 1282.02152,
+    "tp3": 1318.76648,
+    "tp4": 1327.95272,
+    "candle_time": 1793286000000,
+    "status": "waiting"
+  },
+  "ENAUSDT": {
+    "symbol": "ENAUSDT",
+    "direction": "LONG",
+    "move_pct": 5.412115193644485,
+    "length": 12,
+    "high": 0.2125,
+    "low": 0.201,
+    "entry": 0.205393,
+    "alert_level": 0.20675,
+    "stop": 0.203461,
+    "tp3": 0.21118899999999996,
+    "tp4": 0.21312099999999995,
+    "candle_time": 1793286000000,
+    "status": "waiting"
+  },
+  "UNIUSDT": {
+    "symbol": "UNIUSDT",
+    "direction": "LONG",
+    "move_pct": 3.145973154362411,
+    "length": 6,
+    "high": 7.393,
+    "low": 7.148,
+    "entry": 7.2415899999999995,
+    "alert_level": 7.2705,
+    "stop": 7.20043,
+    "tp3": 7.3650699999999985,
+    "tp4": 7.406229999999998,
+    "candle_time": 1793286000000,
+    "status": "waiting"
+  },
+  "SOXLBUSDT": {
+    "symbol": "SOXLBUSDT",
+    "direction": "LONG",
+    "move_pct": 4.123607906090097,
+    "length": 10,
+    "high": 103.87,
+    "low": 98.08,
+    "entry": 100.29178,
+    "alert_level": 100.975,
+    "stop": 99.31906,
+    "tp3": 103.20994000000003,
+    "tp4": 104.18266000000004,
+    "candle_time": 1793286000000,
+    "status": "waiting"
   }
 }
