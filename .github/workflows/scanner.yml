@@ -3,7 +3,7 @@ name: Fibonacci Telegram Scanner
 on:
   workflow_dispatch:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/5 * * * *"
 
 permissions:
   contents: write
