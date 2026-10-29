@@ -177,25 +177,7 @@ def format_alert(setup, price, entry_already_passed):
     direction = "LONG 🟢" if setup["direction"] == "LONG" else "SHORT 🔴"
     chart_url = f"https://www.tradingview.com/chart/?symbol=BINANCE:{symbol}"
     futures_url = f"https://www.binance.com/en/futures/{symbol}"
-    if ACCOUNT_BALANCE_USDT > 0:
-        stop_distance = abs(float(setup["entry"]) - float(setup["stop"]))
-        qty_15 = ACCOUNT_BALANCE_USDT * 0.015 / stop_distance
-        qty_20 = ACCOUNT_BALANCE_USDT * 0.02 / stop_distance
-        sizing_note = (
-            "\n\n📐 РАЗМЕР ПОЗИЦИИ (баланс "
-            f"{format_price(ACCOUNT_BALANCE_USDT)} USDT, плечо ×{LEVERAGE})\n"
-            f"Риск 1,5%: {format_price(qty_15)} {symbol[:-4]} "
-            f"(позиция {format_price(qty_15 * float(setup['entry']))} USDT; "
-            f"маржа ≈ {format_price(qty_15 * float(setup['entry']) / LEVERAGE)} USDT)\n"
-            f"Риск 2%: {format_price(qty_20)} {symbol[:-4]} "
-            f"(позиция {format_price(qty_20 * float(setup['entry']))} USDT; "
-            f"маржа ≈ {format_price(qty_20 * float(setup['entry']) / LEVERAGE)} USDT)"
-        )
-    else:
-        sizing_note = (
-            "\n\n📐 Размер позиции не рассчитан: задай баланс счёта "
-            "в GitHub Secrets как ACCOUNT_BALANCE_USDT."
-        )
+    sizing_note = ""
     entry_note = (
         "⚠️ Цена уже прошла уровень 0.618 — проверь график, не ставь ордер вслепую."
         if entry_already_passed else
