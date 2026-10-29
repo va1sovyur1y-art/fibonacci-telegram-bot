@@ -174,6 +174,11 @@ def format_alert(setup, price, entry_already_passed):
     direction = "LONG 🟢" if setup["direction"] == "LONG" else "SHORT 🔴"
     chart_url = f"https://www.tradingview.com/chart/?symbol=BINANCE:{symbol}"
     futures_url = f"https://www.binance.com/en/futures/{symbol}"
+    calculator_url = (
+        "https://va1sovyur1y-art.github.io/fibonacci-telegram-bot/"
+        f"?symbol={symbol}&direction={setup['direction']}"
+        f"&entry={setup['entry']}&stop={setup['stop']}"
+    )
     entry_note = (
         "⚠️ Цена уже прошла уровень 0.618 — проверь график, не ставь ордер вслепую."
         if entry_already_passed else
@@ -195,6 +200,7 @@ def format_alert(setup, price, entry_already_passed):
     )
     keyboard = {"inline_keyboard": [
         [{"text": "📊 Binance Futures", "url": futures_url}],
+        [{"text": "🧮 Калькулятор риска 1,5% / 2% · ×10", "url": calculator_url}],
         [{"text": "📈 Открыть график", "url": chart_url}],
     ]}
     return message, keyboard
@@ -275,10 +281,11 @@ def send_test_alert_if_requested():
         "Это демонстрационные значения, НЕ реальный сетап.\n"
         "Если ты видишь это сообщение, доставка в Telegram работает."
     )
-    keyboard = {"inline_keyboard": [[
-        {"text": "📈 Открыть BTCUSDT на TradingView",
-         "url": "https://www.tradingview.com/chart/?symbol=BINANCE:BTCUSDT"}
-    ]]}
+    keyboard = {"inline_keyboard": [
+        [{"text": "📊 Binance Futures", "url": "https://www.binance.com/en/futures/BTCUSDT"}],
+        [{"text": "🧮 Тест калькулятора риска · ×10", "url": "https://va1sovyur1y-art.github.io/fibonacci-telegram-bot/?symbol=BTCUSDT&direction=LONG&entry=66600&stop=66300"}],
+        [{"text": "📈 Открыть BTCUSDT на TradingView", "url": "https://www.tradingview.com/chart/?symbol=BINANCE:BTCUSDT"}],
+    ]}
     send_telegram(message, keyboard)
     os.remove(trigger_file)
     print("Тестовое уведомление отправлено в Telegram.")
