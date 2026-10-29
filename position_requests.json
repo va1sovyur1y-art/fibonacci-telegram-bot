@@ -5,6 +5,7 @@
     "direction": "LONG",
     "entry": 292.4739,
     "stop": 291.3903,
-    "stage": "balance"
+    "stage": "risk",
+    "balance": 120.0
   }
 }

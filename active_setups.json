@@ -237,7 +237,7 @@
     "tp3": 0.32983160000000006,
     "tp4": 0.32993240000000007,
     "candle_time": 1793236500000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "SPCXBUSDT": {
     "symbol": "SPCXBUSDT",
