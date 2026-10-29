@@ -267,7 +267,7 @@
     "tp3": 143.98548,
     "tp4": 144.18372,
     "candle_time": 1793249100000,
-    "status": "waiting"
+    "status": "missed"
   },
   "XAUTUSDT": {
     "symbol": "XAUTUSDT",
@@ -282,6 +282,21 @@
     "tp3": 4022.7573199999997,
     "tp4": 4019.1654799999997,
     "candle_time": 1793253600000,
+    "status": "waiting"
+  },
+  "PEPEUSDT": {
+    "symbol": "PEPEUSDT",
+    "direction": "SHORT",
+    "move_pct": 3.2945736434108546,
+    "length": 9,
+    "high": 5.16e-06,
+    "low": 4.97e-06,
+    "entry": 5.0874199999999995e-06,
+    "alert_level": 5.065e-06,
+    "stop": 5.11934e-06,
+    "tp3": 4.991659999999999e-06,
+    "tp4": 4.959739999999999e-06,
+    "candle_time": 1793258100000,
     "status": "waiting"
   }
 }
