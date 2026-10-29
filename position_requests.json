@@ -1,1 +1,10 @@
-{}
+{
+  "1437020529": {
+    "chat_id": "1437020529",
+    "symbol": "GOOGLBUSDT",
+    "direction": "LONG",
+    "entry": 292.4739,
+    "stop": 291.3903,
+    "stage": "balance"
+  }
+}
