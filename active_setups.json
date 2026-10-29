@@ -224,21 +224,6 @@
     "candle_time": 1793237400000,
     "status": "waiting"
   },
-  "SPCXBUSDT": {
-    "symbol": "SPCXBUSDT",
-    "direction": "LONG",
-    "move_pct": 0.7695536588778469,
-    "length": 9,
-    "high": 144.12,
-    "low": 142.94,
-    "entry": 143.39076,
-    "alert_level": 143.53,
-    "stop": 143.19252,
-    "tp3": 143.98548,
-    "tp4": 144.18372,
-    "candle_time": 1793249100000,
-    "status": "missed"
-  },
   "XAUTUSDT": {
     "symbol": "XAUTUSDT",
     "direction": "SHORT",
@@ -312,6 +297,36 @@
     "tp3": 86.10292,
     "tp4": 87.48388,
     "candle_time": 1793271600000,
+    "status": "waiting"
+  },
+  "GOOGLBUSDT": {
+    "symbol": "GOOGLBUSDT",
+    "direction": "SHORT",
+    "move_pct": 1.0793455613621505,
+    "length": 7,
+    "high": 292.93,
+    "low": 289.21,
+    "entry": 291.50896,
+    "alert_level": 291.07,
+    "stop": 292.13392,
+    "tp3": 289.63408000000004,
+    "tp4": 289.00912000000005,
+    "candle_time": 1793273400000,
+    "status": "waiting"
+  },
+  "SPCXBUSDT": {
+    "symbol": "SPCXBUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.7413052514895339,
+    "length": 3,
+    "high": 144.54,
+    "low": 142.95,
+    "entry": 143.93262,
+    "alert_level": 143.745,
+    "stop": 144.19974,
+    "tp3": 143.13125999999997,
+    "tp4": 142.86413999999996,
+    "candle_time": 1793273400000,
     "status": "waiting"
   }
 }
