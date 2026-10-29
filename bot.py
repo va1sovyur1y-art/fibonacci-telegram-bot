@@ -370,6 +370,10 @@ def process_telegram_updates():
                         send_text(chat_id, f"Баланс принят: {format_price(balance)} USDT. Выбери риск:", {"inline_keyboard": [[{"text": "Риск 1,5%", "callback_data": "risk:1.5:ok"}, {"text": "Риск 2%", "callback_data": "risk:2:ok"}]]})
                 elif text == "/start":
                     send_text(chat_id, "В сигнале нажми «Рассчитать размер позиции», отправь баланс в USDT и выбери риск 1,5% или 2%. Плечо для маржи — ×10.")
+                elif text == "/status":
+                    send_text(chat_id, "✅ Бот работает.\nТаймфрейм: M15.\nБиржа: Binance Spot.\nСканер отслеживает импульсы и уровни Fibonacci.")
+                elif text == "/scan":
+                    send_text(chat_id, "Сканер работает в фоновом режиме. Последний цикл проверяй в логах Enzonic.")
         except Exception as e:
             print(f"Ошибка обработки Telegram update {uid}: {e}")
         finally:
