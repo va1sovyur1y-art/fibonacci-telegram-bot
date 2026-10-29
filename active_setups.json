@@ -359,21 +359,6 @@
     "candle_time": 1793307600000,
     "status": "waiting"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.02996404314824101,
-    "length": 9,
-    "high": 1.0012,
-    "low": 1.0008,
-    "entry": 1.0010472,
-    "alert_level": 1.001,
-    "stop": 1.0011144,
-    "tp3": 1.0008455999999994,
-    "tp4": 1.0007783999999993,
-    "candle_time": 1793309400000,
-    "status": "waiting"
-  },
   "LINKUSDT": {
     "symbol": "LINKUSDT",
     "direction": "SHORT",
