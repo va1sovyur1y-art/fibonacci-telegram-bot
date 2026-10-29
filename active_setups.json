@@ -298,5 +298,20 @@
     "tp4": 4.959739999999999e-06,
     "candle_time": 1793258100000,
     "status": "waiting"
+  },
+  "AIUSDT": {
+    "symbol": "AIUSDT",
+    "direction": "SHORT",
+    "move_pct": 3.482587064676613,
+    "length": 5,
+    "high": 0.0201,
+    "low": 0.0194,
+    "entry": 0.0198326,
+    "alert_level": 0.01975,
+    "stop": 0.0199502,
+    "tp3": 0.01947979999999999,
+    "tp4": 0.01936219999999999,
+    "candle_time": 1793266200000,
+    "status": "waiting"
   }
 }
