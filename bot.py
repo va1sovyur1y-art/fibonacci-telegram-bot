@@ -5,6 +5,8 @@ import requests
 BASE_URL = "https://data-api.binance.vision"
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+ACCOUNT_BALANCE_USDT = float(os.environ.get("ACCOUNT_BALANCE_USDT", "0"))
+LEVERAGE = 10
 
 TIMEFRAME = "15m"
 ATR_PERIOD = 14
@@ -174,11 +176,25 @@ def format_alert(setup, price, entry_already_passed):
     direction = "LONG 🟢" if setup["direction"] == "LONG" else "SHORT 🔴"
     chart_url = f"https://www.tradingview.com/chart/?symbol=BINANCE:{symbol}"
     futures_url = f"https://www.binance.com/en/futures/{symbol}"
-    calculator_url = (
-        "https://va1sovyur1y-art.github.io/fibonacci-telegram-bot/"
-        f"?symbol={symbol}&direction={setup['direction']}"
-        f"&entry={setup['entry']}&stop={setup['stop']}"
-    )
+    if ACCOUNT_BALANCE_USDT > 0:
+        stop_distance = abs(float(setup["entry"]) - float(setup["stop"]))
+        qty_15 = ACCOUNT_BALANCE_USDT * 0.015 / stop_distance
+        qty_20 = ACCOUNT_BALANCE_USDT * 0.02 / stop_distance
+        sizing_note = (
+            "\n\n📐 РАЗМЕР ПОЗИЦИИ (баланс "
+            f"{format_price(ACCOUNT_BALANCE_USDT)} USDT, плечо ×{LEVERAGE})\n"
+            f"Риск 1,5%: {format_price(qty_15)} {symbol[:-4]} "
+            f"(позиция {format_price(qty_15 * float(setup['entry']))} USDT; "
+            f"маржа ≈ {format_price(qty_15 * float(setup['entry']) / LEVERAGE)} USDT)\n"
+            f"Риск 2%: {format_price(qty_20)} {symbol[:-4]} "
+            f"(позиция {format_price(qty_20 * float(setup['entry']))} USDT; "
+            f"маржа ≈ {format_price(qty_20 * float(setup['entry']) / LEVERAGE)} USDT)"
+        )
+    else:
+        sizing_note = (
+            "\n\n📐 Размер позиции не рассчитан: задай баланс счёта "
+            "в GitHub Secrets как ACCOUNT_BALANCE_USDT."
+        )
     entry_note = (
         "⚠️ Цена уже прошла уровень 0.618 — проверь график, не ставь ордер вслепую."
         if entry_already_passed else
@@ -195,12 +211,12 @@ def format_alert(setup, price, entry_already_passed):
         f"🛑 Стоп 0.786: {format_price(setup['stop'])}\n"
         f"✅ TP 1:3: {format_price(setup['tp3'])}\n"
         f"🚀 TP 1:4: {format_price(setup['tp4'])}\n\n"
-        f"{entry_note}\n"
-        "⚠️ Уведомление для проверки графика, не торговая рекомендация."
+        f"{entry_note}"
+        f"{sizing_note}\n\n"
+        "⚠️ Расчёт приблизительный: комиссии и проскальзывание не учтены. Проверь размер перед входом."
     )
     keyboard = {"inline_keyboard": [
         [{"text": "📊 Binance Futures", "url": futures_url}],
-        [{"text": "🧮 Калькулятор риска 1,5% / 2% · ×10", "url": calculator_url}],
         [{"text": "📈 Открыть график", "url": chart_url}],
     ]}
     return message, keyboard
@@ -283,7 +299,6 @@ def send_test_alert_if_requested():
     )
     keyboard = {"inline_keyboard": [
         [{"text": "📊 Binance Futures", "url": "https://www.binance.com/en/futures/BTCUSDT"}],
-        [{"text": "🧮 Тест калькулятора риска · ×10", "url": "https://va1sovyur1y-art.github.io/fibonacci-telegram-bot/?symbol=BTCUSDT&direction=LONG&entry=66600&stop=66300"}],
         [{"text": "📈 Открыть BTCUSDT на TradingView", "url": "https://www.tradingview.com/chart/?symbol=BINANCE:BTCUSDT"}],
     ]}
     send_telegram(message, keyboard)
