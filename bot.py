@@ -383,7 +383,6 @@ def main():
     if not TOKEN or not CHAT_ID:
         raise RuntimeError("Проверь GitHub Secrets: TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID.")
 
-    process_telegram_updates()
     send_test_alert_if_requested()
     print("Запуск Fibonacci Telegram Scanner")
     active = load_json(ACTIVE_FILE, {})
