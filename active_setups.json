@@ -252,7 +252,7 @@
     "tp3": 0.0625028,
     "tp4": 0.0675092,
     "candle_time": 1793300400000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "BTCUSDT": {
     "symbol": "BTCUSDT",
