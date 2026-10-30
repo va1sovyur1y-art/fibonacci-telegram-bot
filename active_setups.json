@@ -59,21 +59,6 @@
     "candle_time": 1793236500000,
     "status": "alerted"
   },
-  "TRXUSDT": {
-    "symbol": "TRXUSDT",
-    "direction": "LONG",
-    "move_pct": 0.18220467658671272,
-    "length": 3,
-    "high": 0.3299,
-    "low": 0.3293,
-    "entry": 0.3295292,
-    "alert_level": 0.3296,
-    "stop": 0.3294284,
-    "tp3": 0.32983160000000006,
-    "tp4": 0.32993240000000007,
-    "candle_time": 1793236500000,
-    "status": "alerted"
-  },
   "XAUTUSDT": {
     "symbol": "XAUTUSDT",
     "direction": "SHORT",
