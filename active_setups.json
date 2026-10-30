@@ -376,17 +376,17 @@
   },
   "UUSDT": {
     "symbol": "UUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.06994404476418095,
-    "length": 5,
-    "high": 1.0009,
-    "low": 0.9998,
-    "entry": 1.0004798,
-    "alert_level": 1.00035,
-    "stop": 1.0006646,
-    "tp3": 0.9999254,
-    "tp4": 0.9997406,
-    "candle_time": 1793321100000,
-    "status": "missed"
+    "direction": "LONG",
+    "move_pct": 0.04999000199959457,
+    "length": 11,
+    "high": 1.0008,
+    "low": 1.0002,
+    "entry": 1.0004292,
+    "alert_level": 1.0005,
+    "stop": 1.0003284,
+    "tp3": 1.0007316,
+    "tp4": 1.0008324,
+    "candle_time": 1793339100000,
+    "status": "waiting"
   }
 }
