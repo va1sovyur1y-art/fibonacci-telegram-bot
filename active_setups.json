@@ -372,7 +372,7 @@
     "tp3": 1.0016088000000003,
     "tp4": 1.0017432000000004,
     "candle_time": 1793313900000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "UUSDT": {
     "symbol": "UUSDT",
