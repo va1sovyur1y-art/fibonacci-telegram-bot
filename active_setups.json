@@ -374,21 +374,6 @@
     "candle_time": 1793313900000,
     "status": "alerted"
   },
-  "UUSDT": {
-    "symbol": "UUSDT",
-    "direction": "LONG",
-    "move_pct": 0.04999000199959457,
-    "length": 11,
-    "high": 1.0008,
-    "low": 1.0002,
-    "entry": 1.0004292,
-    "alert_level": 1.0005,
-    "stop": 1.0003284,
-    "tp3": 1.0007316,
-    "tp4": 1.0008324,
-    "candle_time": 1793339100000,
-    "status": "missed"
-  },
   "INTCBUSDT": {
     "symbol": "INTCBUSDT",
     "direction": "SHORT",
