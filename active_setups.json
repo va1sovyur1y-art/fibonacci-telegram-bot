@@ -104,21 +104,6 @@
     "candle_time": 1793266200000,
     "status": "waiting"
   },
-  "UUSDT": {
-    "symbol": "UUSDT",
-    "direction": "LONG",
-    "move_pct": 0.039999999999995595,
-    "length": 5,
-    "high": 1.0006,
-    "low": 1.0,
-    "entry": 1.0002292,
-    "alert_level": 1.0003,
-    "stop": 1.0001284,
-    "tp3": 1.0005316,
-    "tp4": 1.0006324,
-    "candle_time": 1793271600000,
-    "status": "alerted"
-  },
   "HYPEUSDT": {
     "symbol": "HYPEUSDT",
     "direction": "LONG",
@@ -387,6 +372,21 @@
     "tp3": 1.0016088000000003,
     "tp4": 1.0017432000000004,
     "candle_time": 1793313900000,
+    "status": "waiting"
+  },
+  "UUSDT": {
+    "symbol": "UUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.06994404476418095,
+    "length": 5,
+    "high": 1.0009,
+    "low": 0.9998,
+    "entry": 1.0004798,
+    "alert_level": 1.00035,
+    "stop": 1.0006646,
+    "tp3": 0.9999254,
+    "tp4": 0.9997406,
+    "candle_time": 1793321100000,
     "status": "waiting"
   }
 }
