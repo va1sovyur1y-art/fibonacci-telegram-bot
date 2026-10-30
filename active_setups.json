@@ -342,7 +342,7 @@
     "tp3": 10.994050000000005,
     "tp4": 10.855450000000006,
     "candle_time": 1793309400000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
@@ -373,5 +373,20 @@
     "tp4": 66.84022000000003,
     "candle_time": 1793350800000,
     "status": "alerted"
+  },
+  "TRXUSDT": {
+    "symbol": "TRXUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.8766626360338448,
+    "length": 10,
+    "high": 0.3309,
+    "low": 0.3276,
+    "entry": 0.3296394,
+    "alert_level": 0.32925000000000004,
+    "stop": 0.33019380000000004,
+    "tp3": 0.3279762,
+    "tp4": 0.3274218,
+    "candle_time": 1793399400000,
+    "status": "waiting"
   }
 }
