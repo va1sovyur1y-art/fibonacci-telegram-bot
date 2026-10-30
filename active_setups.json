@@ -388,5 +388,20 @@
     "tp4": 1.0008324,
     "candle_time": 1793339100000,
     "status": "missed"
+  },
+  "INTCBUSDT": {
+    "symbol": "INTCBUSDT",
+    "direction": "SHORT",
+    "move_pct": 3.449732469726842,
+    "length": 11,
+    "high": 71.13,
+    "low": 67.06,
+    "entry": 69.57526,
+    "alert_level": 69.095,
+    "stop": 70.25901999999999,
+    "tp3": 67.52398000000002,
+    "tp4": 66.84022000000003,
+    "candle_time": 1793350800000,
+    "status": "waiting"
   }
 }
