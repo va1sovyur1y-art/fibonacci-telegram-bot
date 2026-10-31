@@ -404,21 +404,6 @@
     "candle_time": 1793435400000,
     "status": "missed"
   },
-  "ONDOUSDT": {
-    "symbol": "ONDOUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.1119168479574555,
-    "length": 5,
-    "high": 0.4137,
-    "low": 0.4087,
-    "entry": 0.41179,
-    "alert_level": 0.4112,
-    "stop": 0.41263,
-    "tp3": 0.40926999999999997,
-    "tp4": 0.40842999999999996,
-    "candle_time": 1793455200000,
-    "status": "alerted"
-  },
   "ZROUSDT": {
     "symbol": "ZROUSDT",
     "direction": "LONG",
@@ -432,6 +417,21 @@
     "tp3": 1.7620720000000003,
     "tp4": 1.7708080000000004,
     "candle_time": 1793457000000,
+    "status": "waiting"
+  },
+  "ONDOUSDT": {
+    "symbol": "ONDOUSDT",
+    "direction": "LONG",
+    "move_pct": 1.4198286413708758,
+    "length": 3,
+    "high": 0.4145,
+    "low": 0.4081,
+    "entry": 0.4105448,
+    "alert_level": 0.4113,
+    "stop": 0.4094696,
+    "tp3": 0.4137704,
+    "tp4": 0.4148456,
+    "candle_time": 1793460600000,
     "status": "waiting"
   }
 }
