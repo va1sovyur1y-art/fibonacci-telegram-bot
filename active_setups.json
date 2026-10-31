@@ -389,21 +389,6 @@
     "candle_time": 1793404800000,
     "status": "alerted"
   },
-  "EURUSDT": {
-    "symbol": "EURUSDT",
-    "direction": "LONG",
-    "move_pct": 1.9053527118043114,
-    "length": 12,
-    "high": 1.1507,
-    "low": 1.1263,
-    "entry": 1.1356208,
-    "alert_level": 1.1385,
-    "stop": 1.1315216000000001,
-    "tp3": 1.1479184,
-    "tp4": 1.1520176,
-    "candle_time": 1793404800000,
-    "status": "missed"
-  },
   "BEAMXUSDT": {
     "symbol": "BEAMXUSDT",
     "direction": "SHORT",
@@ -418,5 +403,20 @@
     "tp4": 0.0046560060000000025,
     "candle_time": 1793425500000,
     "status": "missed"
+  },
+  "CRCLBUSDT": {
+    "symbol": "CRCLBUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.5322778763477557,
+    "length": 8,
+    "high": 73.35,
+    "low": 72.85,
+    "entry": 73.15899999999999,
+    "alert_level": 73.1,
+    "stop": 73.243,
+    "tp3": 72.90699999999998,
+    "tp4": 72.82299999999998,
+    "candle_time": 1793435400000,
+    "status": "waiting"
   }
 }
