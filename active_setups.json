@@ -387,7 +387,7 @@
     "tp3": 11.531898000000002,
     "tp4": 11.589522000000002,
     "candle_time": 1793404800000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "EURUSDT": {
     "symbol": "EURUSDT",
