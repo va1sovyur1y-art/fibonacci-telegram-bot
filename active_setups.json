@@ -433,5 +433,20 @@
     "tp4": 0.4148456,
     "candle_time": 1793460600000,
     "status": "waiting"
+  },
+  "LSKUSDT": {
+    "symbol": "LSKUSDT",
+    "direction": "SHORT",
+    "move_pct": 11.610006414368188,
+    "length": 6,
+    "high": 0.3169,
+    "low": 0.266,
+    "entry": 0.2974562,
+    "alert_level": 0.29145,
+    "stop": 0.30600740000000004,
+    "tp3": 0.2718025999999999,
+    "tp4": 0.26325139999999986,
+    "candle_time": 1793464200000,
+    "status": "waiting"
   }
 }
