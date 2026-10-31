@@ -421,17 +421,17 @@
   },
   "ZROUSDT": {
     "symbol": "ZROUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.603665521191296,
-    "length": 7,
-    "high": 1.746,
+    "direction": "LONG",
+    "move_pct": 2.6759744037230844,
+    "length": 5,
+    "high": 1.768,
     "low": 1.716,
-    "entry": 1.73454,
-    "alert_level": 1.7309999999999999,
-    "stop": 1.73958,
-    "tp3": 1.7194200000000002,
-    "tp4": 1.7143800000000002,
-    "candle_time": 1793455200000,
+    "entry": 1.735864,
+    "alert_level": 1.742,
+    "stop": 1.727128,
+    "tp3": 1.7620720000000003,
+    "tp4": 1.7708080000000004,
+    "candle_time": 1793457000000,
     "status": "waiting"
   }
 }
