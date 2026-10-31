@@ -417,7 +417,7 @@
     "tp3": 0.40926999999999997,
     "tp4": 0.40842999999999996,
     "candle_time": 1793455200000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "ZROUSDT": {
     "symbol": "ZROUSDT",
