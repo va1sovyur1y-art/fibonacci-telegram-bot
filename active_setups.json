@@ -462,7 +462,7 @@
     "tp3": 133.80555999999996,
     "tp4": 133.54683999999995,
     "candle_time": 1793479500000,
-    "status": "waiting"
+    "status": "missed"
   },
   "BEAMXUSDT": {
     "symbol": "BEAMXUSDT",
