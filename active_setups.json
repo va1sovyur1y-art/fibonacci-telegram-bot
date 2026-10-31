@@ -403,5 +403,20 @@
     "tp4": 1.1520176,
     "candle_time": 1793404800000,
     "status": "waiting"
+  },
+  "BEAMXUSDT": {
+    "symbol": "BEAMXUSDT",
+    "direction": "SHORT",
+    "move_pct": 9.600000000000001,
+    "length": 8,
+    "high": 0.0053,
+    "low": 0.004689,
+    "entry": 0.005066598,
+    "alert_level": 0.0049945,
+    "stop": 0.005169246,
+    "tp3": 0.004758654000000002,
+    "tp4": 0.0046560060000000025,
+    "candle_time": 1793425500000,
+    "status": "waiting"
   }
 }
