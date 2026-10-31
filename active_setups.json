@@ -432,7 +432,7 @@
     "tp3": 0.4137704,
     "tp4": 0.4148456,
     "candle_time": 1793460600000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "LSKUSDT": {
     "symbol": "LSKUSDT",
