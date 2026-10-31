@@ -448,5 +448,20 @@
     "tp4": 0.26325139999999986,
     "candle_time": 1793464200000,
     "status": "waiting"
+  },
+  "AVAXUSDT": {
+    "symbol": "AVAXUSDT",
+    "direction": "LONG",
+    "move_pct": 0.9376465072667612,
+    "length": 8,
+    "high": 8.633,
+    "low": 8.528,
+    "entry": 8.56811,
+    "alert_level": 8.5805,
+    "stop": 8.55047,
+    "tp3": 8.621030000000001,
+    "tp4": 8.638670000000001,
+    "candle_time": 1793474100000,
+    "status": "waiting"
   }
 }
