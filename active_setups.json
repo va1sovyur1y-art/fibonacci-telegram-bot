@@ -389,21 +389,6 @@
     "candle_time": 1793404800000,
     "status": "alerted"
   },
-  "CRCLBUSDT": {
-    "symbol": "CRCLBUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.5322778763477557,
-    "length": 8,
-    "high": 73.35,
-    "low": 72.85,
-    "entry": 73.15899999999999,
-    "alert_level": 73.1,
-    "stop": 73.243,
-    "tp3": 72.90699999999998,
-    "tp4": 72.82299999999998,
-    "candle_time": 1793435400000,
-    "status": "missed"
-  },
   "ZROUSDT": {
     "symbol": "ZROUSDT",
     "direction": "LONG",
