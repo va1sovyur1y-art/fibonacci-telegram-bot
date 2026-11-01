@@ -222,7 +222,7 @@
     "tp3": 7.195277999999998,
     "tp4": 7.140341999999998,
     "candle_time": 1793300400000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "PARTIUSDT": {
     "symbol": "PARTIUSDT",
