@@ -419,21 +419,6 @@
     "candle_time": 1793464200000,
     "status": "waiting"
   },
-  "BEAMXUSDT": {
-    "symbol": "BEAMXUSDT",
-    "direction": "LONG",
-    "move_pct": 6.120310207503662,
-    "length": 3,
-    "high": 0.005237,
-    "low": 0.004721,
-    "entry": 0.0049181120000000005,
-    "alert_level": 0.004979000000000001,
-    "stop": 0.004831424,
-    "tp3": 0.005178176000000002,
-    "tp4": 0.005264864000000003,
-    "candle_time": 1793479500000,
-    "status": "alerted"
-  },
   "AAVEUSDT": {
     "symbol": "AAVEUSDT",
     "direction": "LONG",
@@ -507,6 +492,21 @@
     "tp3": 1.000157,
     "tp4": 1.000073,
     "candle_time": 1793524500000,
+    "status": "waiting"
+  },
+  "BEAMXUSDT": {
+    "symbol": "BEAMXUSDT",
+    "direction": "SHORT",
+    "move_pct": 8.032975460122701,
+    "length": 12,
+    "high": 0.005221,
+    "low": 0.004787,
+    "entry": 0.005055212,
+    "alert_level": 0.005004,
+    "stop": 0.0051281239999999995,
+    "tp3": 0.004836476000000001,
+    "tp4": 0.004763564000000001,
+    "candle_time": 1793543400000,
     "status": "waiting"
   }
 }
