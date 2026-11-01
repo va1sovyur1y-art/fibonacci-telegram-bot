@@ -464,21 +464,6 @@
     "candle_time": 1793511000000,
     "status": "waiting"
   },
-  "CELOUSDT": {
-    "symbol": "CELOUSDT",
-    "direction": "LONG",
-    "move_pct": 1.4662362119989154,
-    "length": 5,
-    "high": 0.07543,
-    "low": 0.0743,
-    "entry": 0.07473166,
-    "alert_level": 0.074865,
-    "stop": 0.07454182000000001,
-    "tp3": 0.07530118,
-    "tp4": 0.07549101999999999,
-    "candle_time": 1793520000000,
-    "status": "alerted"
-  },
   "UUSDT": {
     "symbol": "UUSDT",
     "direction": "SHORT",
