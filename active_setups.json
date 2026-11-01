@@ -478,5 +478,20 @@
     "tp4": 8.814418000000005,
     "candle_time": 1793508300000,
     "status": "waiting"
+  },
+  "XPLUSDT": {
+    "symbol": "XPLUSDT",
+    "direction": "SHORT",
+    "move_pct": 14.983713355048847,
+    "length": 5,
+    "high": 0.08619,
+    "low": 0.06903,
+    "entry": 0.07963488,
+    "alert_level": 0.07761,
+    "stop": 0.08251776,
+    "tp3": 0.07098624000000003,
+    "tp4": 0.06810336000000004,
+    "candle_time": 1793511000000,
+    "status": "waiting"
   }
 }
