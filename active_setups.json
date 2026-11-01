@@ -477,7 +477,7 @@
     "tp3": 1.0010228000000005,
     "tp4": 1.0009892000000007,
     "candle_time": 1793570400000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "LINKUSDT": {
     "symbol": "LINKUSDT",
@@ -492,6 +492,6 @@
     "tp3": 11.317364000000003,
     "tp4": 11.296196000000004,
     "candle_time": 1793570400000,
-    "status": "waiting"
+    "status": "missed"
   }
 }
