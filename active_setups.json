@@ -493,5 +493,20 @@
     "tp4": 0.07549101999999999,
     "candle_time": 1793520000000,
     "status": "waiting"
+  },
+  "UUSDT": {
+    "symbol": "UUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.04997001798920098,
+    "length": 3,
+    "high": 1.0006,
+    "low": 1.0001,
+    "entry": 1.0004089999999999,
+    "alert_level": 1.00035,
+    "stop": 1.0004929999999999,
+    "tp3": 1.000157,
+    "tp4": 1.000073,
+    "candle_time": 1793524500000,
+    "status": "waiting"
   }
 }
