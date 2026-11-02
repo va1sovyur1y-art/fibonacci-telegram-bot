@@ -359,21 +359,6 @@
     "candle_time": 1793399400000,
     "status": "waiting"
   },
-  "ZROUSDT": {
-    "symbol": "ZROUSDT",
-    "direction": "LONG",
-    "move_pct": 2.6759744037230844,
-    "length": 5,
-    "high": 1.768,
-    "low": 1.716,
-    "entry": 1.735864,
-    "alert_level": 1.742,
-    "stop": 1.727128,
-    "tp3": 1.7620720000000003,
-    "tp4": 1.7708080000000004,
-    "candle_time": 1793457000000,
-    "status": "waiting"
-  },
   "LSKUSDT": {
     "symbol": "LSKUSDT",
     "direction": "SHORT",
@@ -449,21 +434,6 @@
     "candle_time": 1793558700000,
     "status": "missed"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "LONG",
-    "move_pct": 0.019980019980039964,
-    "length": 5,
-    "high": 1.0012,
-    "low": 1.001,
-    "entry": 1.0010763999999999,
-    "alert_level": 1.0011,
-    "stop": 1.0010428,
-    "tp3": 1.0011771999999994,
-    "tp4": 1.0012107999999993,
-    "candle_time": 1793577600000,
-    "status": "alerted"
-  },
   "LINKUSDT": {
     "symbol": "LINKUSDT",
     "direction": "SHORT",
@@ -507,6 +477,21 @@
     "tp3": 8.595328000000004,
     "tp4": 8.569792000000005,
     "candle_time": 1793600100000,
+    "status": "waiting"
+  },
+  "RLUSDUSDT": {
+    "symbol": "RLUSDUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.03994407829041122,
+    "length": 8,
+    "high": 1.0015,
+    "low": 1.001,
+    "entry": 1.001309,
+    "alert_level": 1.00125,
+    "stop": 1.001393,
+    "tp3": 1.001057,
+    "tp4": 1.0009730000000001,
+    "candle_time": 1793638800000,
     "status": "waiting"
   }
 }
