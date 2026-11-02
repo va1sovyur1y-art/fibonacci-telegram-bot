@@ -432,7 +432,7 @@
     "tp3": 0.0050977719999999995,
     "tp4": 0.0051821079999999995,
     "candle_time": 1793558700000,
-    "status": "waiting"
+    "status": "missed"
   },
   "AAVEUSDT": {
     "symbol": "AAVEUSDT",
