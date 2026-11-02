@@ -464,21 +464,6 @@
     "candle_time": 1793600100000,
     "status": "waiting"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.03994407829041122,
-    "length": 8,
-    "high": 1.0015,
-    "low": 1.001,
-    "entry": 1.001309,
-    "alert_level": 1.00125,
-    "stop": 1.001393,
-    "tp3": 1.001057,
-    "tp4": 1.0009730000000001,
-    "candle_time": 1793638800000,
-    "status": "alerted"
-  },
   "SOXLBUSDT": {
     "symbol": "SOXLBUSDT",
     "direction": "SHORT",
