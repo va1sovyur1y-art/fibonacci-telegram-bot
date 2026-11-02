@@ -493,5 +493,20 @@
     "tp4": 11.276467999999994,
     "candle_time": 1793587500000,
     "status": "alerted"
+  },
+  "TRUMPUSDT": {
+    "symbol": "TRUMPUSDT",
+    "direction": "SHORT",
+    "move_pct": 2.936096718480147,
+    "length": 4,
+    "high": 1.738,
+    "low": 1.674,
+    "entry": 1.713552,
+    "alert_level": 1.706,
+    "stop": 1.724304,
+    "tp3": 1.6812959999999997,
+    "tp4": 1.6705439999999996,
+    "candle_time": 1793593800000,
+    "status": "waiting"
   }
 }
