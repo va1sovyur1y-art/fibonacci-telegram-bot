@@ -464,21 +464,6 @@
     "candle_time": 1793558700000,
     "status": "waiting"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.019976028765501398,
-    "length": 5,
-    "high": 1.0012,
-    "low": 1.001,
-    "entry": 1.0011236000000001,
-    "alert_level": 1.0011,
-    "stop": 1.0011572,
-    "tp3": 1.0010228000000005,
-    "tp4": 1.0009892000000007,
-    "candle_time": 1793570400000,
-    "status": "alerted"
-  },
   "LINKUSDT": {
     "symbol": "LINKUSDT",
     "direction": "SHORT",
@@ -493,5 +478,20 @@
     "tp4": 11.296196000000004,
     "candle_time": 1793570400000,
     "status": "missed"
+  },
+  "RLUSDUSDT": {
+    "symbol": "RLUSDUSDT",
+    "direction": "LONG",
+    "move_pct": 0.019980019980039964,
+    "length": 5,
+    "high": 1.0012,
+    "low": 1.001,
+    "entry": 1.0010763999999999,
+    "alert_level": 1.0011,
+    "stop": 1.0010428,
+    "tp3": 1.0011771999999994,
+    "tp4": 1.0012107999999993,
+    "candle_time": 1793577600000,
+    "status": "waiting"
   }
 }
