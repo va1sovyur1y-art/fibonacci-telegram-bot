@@ -404,21 +404,6 @@
     "candle_time": 1793524500000,
     "status": "waiting"
   },
-  "BEAMXUSDT": {
-    "symbol": "BEAMXUSDT",
-    "direction": "LONG",
-    "move_pct": 10.44262999570261,
-    "length": 12,
-    "high": 0.005155,
-    "low": 0.004653,
-    "entry": 0.004844764,
-    "alert_level": 0.004904,
-    "stop": 0.004760428,
-    "tp3": 0.0050977719999999995,
-    "tp4": 0.0051821079999999995,
-    "candle_time": 1793558700000,
-    "status": "missed"
-  },
   "AAVEUSDT": {
     "symbol": "AAVEUSDT",
     "direction": "SHORT",
