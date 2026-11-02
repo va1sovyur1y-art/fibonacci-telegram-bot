@@ -389,21 +389,6 @@
     "candle_time": 1793464200000,
     "status": "waiting"
   },
-  "AVAXUSDT": {
-    "symbol": "AVAXUSDT",
-    "direction": "LONG",
-    "move_pct": 3.1173092698933558,
-    "length": 8,
-    "high": 8.8,
-    "low": 8.533,
-    "entry": 8.634994,
-    "alert_level": 8.6665,
-    "stop": 8.590138,
-    "tp3": 8.769562000000004,
-    "tp4": 8.814418000000005,
-    "candle_time": 1793508300000,
-    "status": "alerted"
-  },
   "XPLUSDT": {
     "symbol": "XPLUSDT",
     "direction": "SHORT",
@@ -507,6 +492,21 @@
     "tp3": 1.6812959999999997,
     "tp4": 1.6705439999999996,
     "candle_time": 1793593800000,
+    "status": "waiting"
+  },
+  "AVAXUSDT": {
+    "symbol": "AVAXUSDT",
+    "direction": "SHORT",
+    "move_pct": 1.3900057438253928,
+    "length": 11,
+    "high": 8.73,
+    "low": 8.578,
+    "entry": 8.671936,
+    "alert_level": 8.654,
+    "stop": 8.697472,
+    "tp3": 8.595328000000004,
+    "tp4": 8.569792000000005,
+    "candle_time": 1793600100000,
     "status": "waiting"
   }
 }
