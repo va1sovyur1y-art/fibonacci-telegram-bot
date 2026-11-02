@@ -462,21 +462,6 @@
     "tp3": 134.27258000000003,
     "tp4": 133.60562000000004,
     "candle_time": 1793558700000,
-    "status": "waiting"
-  },
-  "LINKUSDT": {
-    "symbol": "LINKUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.8587451805117486,
-    "length": 6,
-    "high": 11.429,
-    "low": 11.303,
-    "entry": 11.380868000000001,
-    "alert_level": 11.366,
-    "stop": 11.402036,
-    "tp3": 11.317364000000003,
-    "tp4": 11.296196000000004,
-    "candle_time": 1793570400000,
     "status": "missed"
   },
   "RLUSDUSDT": {
@@ -492,6 +477,6 @@
     "tp3": 1.0011771999999994,
     "tp4": 1.0012107999999993,
     "candle_time": 1793577600000,
-    "status": "waiting"
+    "status": "alerted"
   }
 }
