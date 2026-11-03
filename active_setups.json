@@ -462,7 +462,7 @@
     "tp3": 8.595328000000004,
     "tp4": 8.569792000000005,
     "candle_time": 1793600100000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "SOXLBUSDT": {
     "symbol": "SOXLBUSDT",
