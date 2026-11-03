@@ -102,7 +102,7 @@
     "tp3": 86.10292,
     "tp4": 87.48388,
     "candle_time": 1793271600000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "GOOGLBUSDT": {
     "symbol": "GOOGLBUSDT",
