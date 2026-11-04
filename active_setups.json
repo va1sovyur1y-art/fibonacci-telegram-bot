@@ -404,21 +404,6 @@
     "candle_time": 1793804400000,
     "status": "waiting"
   },
-  "ZECUSDT": {
-    "symbol": "ZECUSDT",
-    "direction": "LONG",
-    "move_pct": 5.449962424849691,
-    "length": 4,
-    "high": 1351.55,
-    "low": 1273.31,
-    "entry": 1303.19768,
-    "alert_level": 1312.4299999999998,
-    "stop": 1290.0533599999999,
-    "tp3": 1342.6306400000003,
-    "tp4": 1355.7749600000004,
-    "candle_time": 1793804400000,
-    "status": "alerted"
-  },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
     "direction": "SHORT",
