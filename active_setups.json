@@ -478,5 +478,20 @@
     "tp4": 1.0010784000000004,
     "candle_time": 1793726100000,
     "status": "waiting"
+  },
+  "SOXLBUSDT": {
+    "symbol": "SOXLBUSDT",
+    "direction": "SHORT",
+    "move_pct": 6.995779511446474,
+    "length": 11,
+    "high": 78.29,
+    "low": 72.34,
+    "entry": 76.0171,
+    "alert_level": 75.315,
+    "stop": 77.0167,
+    "tp3": 73.0183,
+    "tp4": 72.0187,
+    "candle_time": 1793751300000,
+    "status": "waiting"
   }
 }
