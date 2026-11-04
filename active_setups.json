@@ -448,5 +448,20 @@
     "tp4": 4056.45862,
     "candle_time": 1793813400000,
     "status": "waiting"
+  },
+  "ZECUSDT": {
+    "symbol": "ZECUSDT",
+    "direction": "LONG",
+    "move_pct": 2.3202619498973913,
+    "length": 10,
+    "high": 1308.0,
+    "low": 1272.81,
+    "entry": 1286.2525799999999,
+    "alert_level": 1290.405,
+    "stop": 1280.3406599999998,
+    "tp3": 1303.9883399999999,
+    "tp4": 1309.90026,
+    "candle_time": 1793830500000,
+    "status": "waiting"
   }
 }
