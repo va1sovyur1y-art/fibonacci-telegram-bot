@@ -433,5 +433,35 @@
     "tp4": 1355.7749600000004,
     "candle_time": 1793804400000,
     "status": "waiting"
+  },
+  "RLUSDUSDT": {
+    "symbol": "RLUSDUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.04993508439030929,
+    "length": 5,
+    "high": 1.0013,
+    "low": 1.0006,
+    "entry": 1.0010326,
+    "alert_level": 1.00095,
+    "stop": 1.0011502,
+    "tp3": 1.0006798,
+    "tp4": 1.0005621999999998,
+    "candle_time": 1793808000000,
+    "status": "waiting"
+  },
+  "LINKUSDT": {
+    "symbol": "LINKUSDT",
+    "direction": "LONG",
+    "move_pct": 5.058505850585069,
+    "length": 12,
+    "high": 11.796,
+    "low": 11.083,
+    "entry": 11.355366,
+    "alert_level": 11.439499999999999,
+    "stop": 11.235582,
+    "tp3": 11.714717999999998,
+    "tp4": 11.834501999999997,
+    "candle_time": 1793808000000,
+    "status": "waiting"
   }
 }
