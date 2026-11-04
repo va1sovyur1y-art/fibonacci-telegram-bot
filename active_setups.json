@@ -209,21 +209,6 @@
     "candle_time": 1793300400000,
     "status": "waiting"
   },
-  "UNIUSDT": {
-    "symbol": "UNIUSDT",
-    "direction": "SHORT",
-    "move_pct": 4.149377593361002,
-    "length": 12,
-    "high": 7.485,
-    "low": 7.158,
-    "entry": 7.360086,
-    "alert_level": 7.3215,
-    "stop": 7.4150220000000004,
-    "tp3": 7.195277999999998,
-    "tp4": 7.140341999999998,
-    "candle_time": 1793300400000,
-    "status": "alerted"
-  },
   "PARTIUSDT": {
     "symbol": "PARTIUSDT",
     "direction": "LONG",
@@ -464,21 +449,6 @@
     "candle_time": 1793600100000,
     "status": "alerted"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.0399400898651978,
-    "length": 7,
-    "high": 1.0015,
-    "low": 1.0011,
-    "entry": 1.0013472,
-    "alert_level": 1.0013,
-    "stop": 1.0014144,
-    "tp3": 1.0011456000000003,
-    "tp4": 1.0010784000000004,
-    "candle_time": 1793726100000,
-    "status": "alerted"
-  },
   "SOXLBUSDT": {
     "symbol": "SOXLBUSDT",
     "direction": "SHORT",
@@ -492,6 +462,21 @@
     "tp3": 73.0183,
     "tp4": 72.0187,
     "candle_time": 1793751300000,
+    "status": "alerted"
+  },
+  "UNIUSDT": {
+    "symbol": "UNIUSDT",
+    "direction": "LONG",
+    "move_pct": 4.976303317535535,
+    "length": 12,
+    "high": 7.535,
+    "low": 7.169,
+    "entry": 7.308812,
+    "alert_level": 7.352,
+    "stop": 7.247324,
+    "tp3": 7.493275999999999,
+    "tp4": 7.554763999999999,
+    "candle_time": 1793777400000,
     "status": "waiting"
   }
 }
