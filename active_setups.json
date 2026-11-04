@@ -432,7 +432,7 @@
     "tp3": 7.493275999999999,
     "tp4": 7.554763999999999,
     "candle_time": 1793777400000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "ZECUSDT": {
     "symbol": "ZECUSDT",
