@@ -432,7 +432,7 @@
     "tp3": 11.714717999999998,
     "tp4": 11.834501999999997,
     "candle_time": 1793808000000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "XAUTUSDT": {
     "symbol": "XAUTUSDT",
