@@ -417,7 +417,7 @@
     "tp3": 1.0006798,
     "tp4": 1.0005621999999998,
     "candle_time": 1793808000000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "LINKUSDT": {
     "symbol": "LINKUSDT",
