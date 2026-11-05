@@ -327,7 +327,7 @@
     "tp3": 1.000157,
     "tp4": 1.000073,
     "candle_time": 1793524500000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "AAVEUSDT": {
     "symbol": "AAVEUSDT",
@@ -402,7 +402,7 @@
     "tp3": 2430.0530000000003,
     "tp4": 2452.8170000000005,
     "candle_time": 1793804400000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
