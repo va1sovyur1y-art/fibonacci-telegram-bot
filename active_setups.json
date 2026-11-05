@@ -359,21 +359,6 @@
     "candle_time": 1793793600000,
     "status": "waiting"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.04993508439030929,
-    "length": 5,
-    "high": 1.0013,
-    "low": 1.0006,
-    "entry": 1.0010326,
-    "alert_level": 1.00095,
-    "stop": 1.0011502,
-    "tp3": 1.0006798,
-    "tp4": 1.0005621999999998,
-    "candle_time": 1793808000000,
-    "status": "alerted"
-  },
   "XAUTUSDT": {
     "symbol": "XAUTUSDT",
     "direction": "LONG",
@@ -417,7 +402,7 @@
     "tp3": 1233.2192600000003,
     "tp4": 1215.8161400000004,
     "candle_time": 1793891700000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "UNIUSDT": {
     "symbol": "UNIUSDT",
@@ -447,6 +432,36 @@
     "tp3": 78.5503,
     "tp4": 77.88669999999999,
     "candle_time": 1793891700000,
+    "status": "alerted"
+  },
+  "RLUSDUSDT": {
+    "symbol": "RLUSDUSDT",
+    "direction": "LONG",
+    "move_pct": 0.03996802557955416,
+    "length": 9,
+    "high": 1.0013,
+    "low": 1.0008,
+    "entry": 1.000991,
+    "alert_level": 1.00105,
+    "stop": 1.000907,
+    "tp3": 1.0012429999999999,
+    "tp4": 1.0013269999999999,
+    "candle_time": 1793895300000,
+    "status": "waiting"
+  },
+  "CRCLBUSDT": {
+    "symbol": "CRCLBUSDT",
+    "direction": "SHORT",
+    "move_pct": 8.020454851298624,
+    "length": 10,
+    "high": 74.49,
+    "low": 65.0,
+    "entry": 70.86482,
+    "alert_level": 69.745,
+    "stop": 72.45913999999999,
+    "tp3": 66.08186,
+    "tp4": 64.48754000000001,
+    "candle_time": 1793895300000,
     "status": "waiting"
   }
 }
