@@ -477,6 +477,21 @@
     "tp3": 4017.6923599999996,
     "tp4": 4009.6720399999995,
     "candle_time": 1793973600000,
+    "status": "alerted"
+  },
+  "NVDABUSDT": {
+    "symbol": "NVDABUSDT",
+    "direction": "SHORT",
+    "move_pct": 2.3685432684865075,
+    "length": 4,
+    "high": 195.09,
+    "low": 188.0,
+    "entry": 192.38162,
+    "alert_level": 191.54500000000002,
+    "stop": 193.57274,
+    "tp3": 188.80825999999996,
+    "tp4": 187.61713999999995,
+    "candle_time": 1793979000000,
     "status": "waiting"
   }
 }
