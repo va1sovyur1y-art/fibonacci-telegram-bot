@@ -464,21 +464,6 @@
     "candle_time": 1793925000000,
     "status": "waiting"
   },
-  "XAUTUSDT": {
-    "symbol": "XAUTUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.8601085545199396,
-    "length": 10,
-    "high": 4059.99,
-    "low": 4012.25,
-    "entry": 4041.75332,
-    "alert_level": 4036.12,
-    "stop": 4049.77364,
-    "tp3": 4017.6923599999996,
-    "tp4": 4009.6720399999995,
-    "candle_time": 1793973600000,
-    "status": "alerted"
-  },
   "NVDABUSDT": {
     "symbol": "NVDABUSDT",
     "direction": "SHORT",
@@ -492,6 +477,21 @@
     "tp3": 188.80825999999996,
     "tp4": 187.61713999999995,
     "candle_time": 1793979000000,
+    "status": "waiting"
+  },
+  "XAUTUSDT": {
+    "symbol": "XAUTUSDT",
+    "direction": "LONG",
+    "move_pct": 0.3295112991205651,
+    "length": 4,
+    "high": 4055.67,
+    "low": 4042.35,
+    "entry": 4047.43824,
+    "alert_level": 4049.01,
+    "stop": 4045.20048,
+    "tp3": 4054.15152,
+    "tp4": 4056.38928,
+    "candle_time": 1793989800000,
     "status": "waiting"
   }
 }
