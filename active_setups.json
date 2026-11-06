@@ -357,7 +357,7 @@
     "tp3": 4050.48958,
     "tp4": 4056.45862,
     "candle_time": 1793813400000,
-    "status": "waiting"
+    "status": "missed"
   },
   "ETHUSDT": {
     "symbol": "ETHUSDT",
@@ -462,7 +462,7 @@
     "tp3": 1312.5661600000005,
     "tp4": 1326.1002400000007,
     "candle_time": 1793925000000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "QQQBUSDT": {
     "symbol": "QQQBUSDT",
