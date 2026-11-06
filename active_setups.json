@@ -374,21 +374,6 @@
     "candle_time": 1793891700000,
     "status": "waiting"
   },
-  "ZECUSDT": {
-    "symbol": "ZECUSDT",
-    "direction": "SHORT",
-    "move_pct": 5.731354642313542,
-    "length": 7,
-    "high": 1325.0,
-    "low": 1221.41,
-    "entry": 1285.4286200000001,
-    "alert_level": 1273.205,
-    "stop": 1302.83174,
-    "tp3": 1233.2192600000003,
-    "tp4": 1215.8161400000004,
-    "candle_time": 1793891700000,
-    "status": "alerted"
-  },
   "UNIUSDT": {
     "symbol": "UNIUSDT",
     "direction": "SHORT",
@@ -463,5 +448,35 @@
     "tp4": 1.0005215999999997,
     "candle_time": 1793912400000,
     "status": "alerted"
+  },
+  "ZECUSDT": {
+    "symbol": "ZECUSDT",
+    "direction": "LONG",
+    "move_pct": 5.513291255689688,
+    "length": 6,
+    "high": 1321.75,
+    "low": 1241.19,
+    "entry": 1271.9639200000001,
+    "alert_level": 1281.47,
+    "stop": 1258.42984,
+    "tp3": 1312.5661600000005,
+    "tp4": 1326.1002400000007,
+    "candle_time": 1793925000000,
+    "status": "waiting"
+  },
+  "QQQBUSDT": {
+    "symbol": "QQQBUSDT",
+    "direction": "LONG",
+    "move_pct": 1.4905443592211942,
+    "length": 6,
+    "high": 654.59,
+    "low": 639.74,
+    "entry": 645.4127,
+    "alert_level": 647.165,
+    "stop": 642.9179,
+    "tp3": 652.8970999999998,
+    "tp4": 655.3918999999997,
+    "candle_time": 1793925000000,
+    "status": "waiting"
   }
 }
