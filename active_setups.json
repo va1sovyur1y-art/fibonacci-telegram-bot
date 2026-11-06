@@ -493,5 +493,20 @@
     "tp4": 4056.38928,
     "candle_time": 1793989800000,
     "status": "waiting"
+  },
+  "RWUSDUSDT": {
+    "symbol": "RWUSDUSDT",
+    "direction": "LONG",
+    "move_pct": 0.02000400080015783,
+    "length": 4,
+    "high": 1.0,
+    "low": 0.9998,
+    "entry": 0.9998764,
+    "alert_level": 0.9999,
+    "stop": 0.9998428,
+    "tp3": 0.9999771999999999,
+    "tp4": 1.0000107999999999,
+    "candle_time": 1794005100000,
+    "status": "waiting"
   }
 }
