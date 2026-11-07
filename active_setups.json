@@ -493,5 +493,35 @@
     "tp4": 1.0000107999999999,
     "candle_time": 1794005100000,
     "status": "alerted"
+  },
+  "UUSDT": {
+    "symbol": "UUSDT",
+    "direction": "LONG",
+    "move_pct": 0.029999999999996696,
+    "length": 4,
+    "high": 1.0003,
+    "low": 1.0,
+    "entry": 1.0001146,
+    "alert_level": 1.00015,
+    "stop": 1.0000642,
+    "tp3": 1.0002658000000004,
+    "tp4": 1.0003162000000005,
+    "candle_time": 1794025800000,
+    "status": "waiting"
+  },
+  "ONEUSDT": {
+    "symbol": "ONEUSDT",
+    "direction": "LONG",
+    "move_pct": 9.404205607476642,
+    "length": 4,
+    "high": 0.001905,
+    "low": 0.001701,
+    "entry": 0.001778928,
+    "alert_level": 0.001803,
+    "stop": 0.001744656,
+    "tp3": 0.0018817439999999996,
+    "tp4": 0.0019160159999999996,
+    "candle_time": 1794025800000,
+    "status": "waiting"
   }
 }
