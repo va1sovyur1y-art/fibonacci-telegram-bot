@@ -372,7 +372,7 @@
     "tp3": 7.004424000000001,
     "tp4": 6.934536000000001,
     "candle_time": 1793891700000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "HYPEUSDT": {
     "symbol": "HYPEUSDT",
