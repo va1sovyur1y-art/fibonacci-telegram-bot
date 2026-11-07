@@ -419,21 +419,6 @@
     "candle_time": 1793895300000,
     "status": "waiting"
   },
-  "ZECUSDT": {
-    "symbol": "ZECUSDT",
-    "direction": "LONG",
-    "move_pct": 5.513291255689688,
-    "length": 6,
-    "high": 1321.75,
-    "low": 1241.19,
-    "entry": 1271.9639200000001,
-    "alert_level": 1281.47,
-    "stop": 1258.42984,
-    "tp3": 1312.5661600000005,
-    "tp4": 1326.1002400000007,
-    "candle_time": 1793925000000,
-    "status": "alerted"
-  },
   "QQQBUSDT": {
     "symbol": "QQQBUSDT",
     "direction": "LONG",
@@ -507,6 +492,21 @@
     "tp3": 0.0018817439999999996,
     "tp4": 0.0019160159999999996,
     "candle_time": 1794025800000,
+    "status": "waiting"
+  },
+  "ZECUSDT": {
+    "symbol": "ZECUSDT",
+    "direction": "SHORT",
+    "move_pct": 2.854493470365492,
+    "length": 12,
+    "high": 1294.93,
+    "low": 1256.35,
+    "entry": 1280.19244,
+    "alert_level": 1275.6399999999999,
+    "stop": 1286.67388,
+    "tp3": 1260.74812,
+    "tp4": 1254.26668,
+    "candle_time": 1794064500000,
     "status": "waiting"
   }
 }
