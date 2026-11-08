@@ -402,7 +402,7 @@
     "tp3": 1.0012429999999999,
     "tp4": 1.0013269999999999,
     "candle_time": 1793895300000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "CRCLBUSDT": {
     "symbol": "CRCLBUSDT",
@@ -448,21 +448,6 @@
     "tp4": 187.61713999999995,
     "candle_time": 1793979000000,
     "status": "waiting"
-  },
-  "XAUTUSDT": {
-    "symbol": "XAUTUSDT",
-    "direction": "LONG",
-    "move_pct": 0.3295112991205651,
-    "length": 4,
-    "high": 4055.67,
-    "low": 4042.35,
-    "entry": 4047.43824,
-    "alert_level": 4049.01,
-    "stop": 4045.20048,
-    "tp3": 4054.15152,
-    "tp4": 4056.38928,
-    "candle_time": 1793989800000,
-    "status": "alerted"
   },
   "UUSDT": {
     "symbol": "UUSDT",
