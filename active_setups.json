@@ -508,5 +508,20 @@
     "tp4": 1254.26668,
     "candle_time": 1794064500000,
     "status": "alerted"
+  },
+  "BMTUSDT": {
+    "symbol": "BMTUSDT",
+    "direction": "SHORT",
+    "move_pct": 6.561002580169554,
+    "length": 10,
+    "high": 0.02716,
+    "low": 0.02524,
+    "entry": 0.026426559999999998,
+    "alert_level": 0.0262,
+    "stop": 0.02674912,
+    "tp3": 0.02545887999999999,
+    "tp4": 0.025136319999999986,
+    "candle_time": 1794146400000,
+    "status": "waiting"
   }
 }
