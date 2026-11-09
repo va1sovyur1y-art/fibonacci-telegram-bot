@@ -389,21 +389,6 @@
     "candle_time": 1793891700000,
     "status": "alerted"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "LONG",
-    "move_pct": 0.03996802557955416,
-    "length": 9,
-    "high": 1.0013,
-    "low": 1.0008,
-    "entry": 1.000991,
-    "alert_level": 1.00105,
-    "stop": 1.000907,
-    "tp3": 1.0012429999999999,
-    "tp4": 1.0013269999999999,
-    "candle_time": 1793895300000,
-    "status": "alerted"
-  },
   "CRCLBUSDT": {
     "symbol": "CRCLBUSDT",
     "direction": "SHORT",
