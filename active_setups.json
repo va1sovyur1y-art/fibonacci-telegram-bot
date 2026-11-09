@@ -523,5 +523,20 @@
     "tp4": 8.823415999999996,
     "candle_time": 1794230100000,
     "status": "waiting"
+  },
+  "ARBUSDT": {
+    "symbol": "ARBUSDT",
+    "direction": "SHORT",
+    "move_pct": 3.528773072747017,
+    "length": 12,
+    "high": 0.1844,
+    "low": 0.1761,
+    "entry": 0.1812294,
+    "alert_level": 0.18025000000000002,
+    "stop": 0.1826238,
+    "tp3": 0.17704620000000004,
+    "tp4": 0.17565180000000005,
+    "candle_time": 1794249900000,
+    "status": "waiting"
   }
 }
