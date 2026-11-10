@@ -464,21 +464,6 @@
     "candle_time": 1794146400000,
     "status": "waiting"
   },
-  "XAUTUSDT": {
-    "symbol": "XAUTUSDT",
-    "direction": "LONG",
-    "move_pct": 0.475677816138887,
-    "length": 5,
-    "high": 4063.9,
-    "low": 4035.14,
-    "entry": 4046.12632,
-    "alert_level": 4049.52,
-    "stop": 4041.29464,
-    "tp3": 4060.621359999999,
-    "tp4": 4065.453039999999,
-    "candle_time": 1794178800000,
-    "status": "waiting"
-  },
   "AVAXUSDT": {
     "symbol": "AVAXUSDT",
     "direction": "LONG",
@@ -507,6 +492,21 @@
     "tp3": 0.17704620000000004,
     "tp4": 0.17565180000000005,
     "candle_time": 1794249900000,
+    "status": "waiting"
+  },
+  "XAUTUSDT": {
+    "symbol": "XAUTUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.5381445934783432,
+    "length": 3,
+    "high": 4072.28,
+    "low": 4030.4,
+    "entry": 4056.28184,
+    "alert_level": 4051.34,
+    "stop": 4063.31768,
+    "tp3": 4035.17432,
+    "tp4": 4028.13848,
+    "candle_time": 1794317400000,
     "status": "waiting"
   }
 }
