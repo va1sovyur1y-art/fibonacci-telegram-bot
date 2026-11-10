@@ -508,5 +508,20 @@
     "tp4": 4028.13848,
     "candle_time": 1794317400000,
     "status": "waiting"
+  },
+  "INITUSDT": {
+    "symbol": "INITUSDT",
+    "direction": "LONG",
+    "move_pct": 57.548146614205834,
+    "length": 11,
+    "high": 0.315,
+    "low": 0.19156,
+    "entry": 0.23871408,
+    "alert_level": 0.25328,
+    "stop": 0.21797616,
+    "tp3": 0.30092783999999995,
+    "tp4": 0.32166575999999997,
+    "candle_time": 1794321000000,
+    "status": "waiting"
   }
 }
