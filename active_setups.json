@@ -177,7 +177,7 @@
     "tp3": 5.157879999999999e-06,
     "tp4": 5.087319999999998e-06,
     "candle_time": 1793304900000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "ENAUSDT": {
     "symbol": "ENAUSDT",
