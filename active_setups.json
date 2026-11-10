@@ -194,21 +194,6 @@
     "candle_time": 1793304900000,
     "status": "waiting"
   },
-  "SPCXBUSDT": {
-    "symbol": "SPCXBUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.0777360589625802,
-    "length": 4,
-    "high": 144.2,
-    "low": 141.67,
-    "entry": 143.23353999999998,
-    "alert_level": 142.935,
-    "stop": 143.65858,
-    "tp3": 141.9584199999999,
-    "tp4": 141.53337999999988,
-    "candle_time": 1793304900000,
-    "status": "alerted"
-  },
   "ADAUSDT": {
     "symbol": "ADAUSDT",
     "direction": "SHORT",
