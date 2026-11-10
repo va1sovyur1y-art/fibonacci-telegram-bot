@@ -149,21 +149,6 @@
     "candle_time": 1793300400000,
     "status": "missed"
   },
-  "PARTIUSDT": {
-    "symbol": "PARTIUSDT",
-    "direction": "LONG",
-    "move_pct": 55.82655826558265,
-    "length": 12,
-    "high": 0.0659,
-    "low": 0.0361,
-    "entry": 0.0474836,
-    "alert_level": 0.051000000000000004,
-    "stop": 0.0424772,
-    "tp3": 0.0625028,
-    "tp4": 0.0675092,
-    "candle_time": 1793300400000,
-    "status": "alerted"
-  },
   "BTCUSDT": {
     "symbol": "BTCUSDT",
     "direction": "SHORT",
@@ -538,5 +523,20 @@
     "tp4": 0.17565180000000005,
     "candle_time": 1794249900000,
     "status": "waiting"
+  },
+  "RLUSDUSDT": {
+    "symbol": "RLUSDUSDT",
+    "direction": "LONG",
+    "move_pct": 0.019978024173407046,
+    "length": 5,
+    "high": 1.0013,
+    "low": 1.0011,
+    "entry": 1.0011764,
+    "alert_level": 1.0012,
+    "stop": 1.0011428,
+    "tp3": 1.0012772000000003,
+    "tp4": 1.0013108000000004,
+    "candle_time": 1794279600000,
+    "status": "alerted"
   }
 }
