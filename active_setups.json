@@ -464,21 +464,6 @@
     "candle_time": 1794146400000,
     "status": "waiting"
   },
-  "ONEUSDT": {
-    "symbol": "ONEUSDT",
-    "direction": "SHORT",
-    "move_pct": 5.860010851871949,
-    "length": 7,
-    "high": 0.001849,
-    "low": 0.001717,
-    "entry": 0.0017985759999999999,
-    "alert_level": 0.0017829999999999999,
-    "stop": 0.001820752,
-    "tp3": 0.0017320479999999997,
-    "tp4": 0.0017098719999999997,
-    "candle_time": 1794168000000,
-    "status": "waiting"
-  },
   "XAUTUSDT": {
     "symbol": "XAUTUSDT",
     "direction": "LONG",
