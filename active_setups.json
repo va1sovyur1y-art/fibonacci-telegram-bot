@@ -479,21 +479,6 @@
     "candle_time": 1794317400000,
     "status": "alerted"
   },
-  "INITUSDT": {
-    "symbol": "INITUSDT",
-    "direction": "LONG",
-    "move_pct": 57.548146614205834,
-    "length": 11,
-    "high": 0.315,
-    "low": 0.19156,
-    "entry": 0.23871408,
-    "alert_level": 0.25328,
-    "stop": 0.21797616,
-    "tp3": 0.30092783999999995,
-    "tp4": 0.32166575999999997,
-    "candle_time": 1794321000000,
-    "status": "alerted"
-  },
   "ONEUSDT": {
     "symbol": "ONEUSDT",
     "direction": "SHORT",
@@ -522,6 +507,21 @@
     "tp3": 5.177099999999999e-06,
     "tp4": 5.151899999999999e-06,
     "candle_time": 1794384900000,
+    "status": "waiting"
+  },
+  "INITUSDT": {
+    "symbol": "INITUSDT",
+    "direction": "SHORT",
+    "move_pct": 21.087522992029438,
+    "length": 7,
+    "high": 0.27356,
+    "low": 0.19427,
+    "entry": 0.24327122,
+    "alert_level": 0.233915,
+    "stop": 0.25659194,
+    "tp3": 0.20330905999999999,
+    "tp4": 0.18998833999999998,
+    "candle_time": 1794392100000,
     "status": "waiting"
   }
 }
