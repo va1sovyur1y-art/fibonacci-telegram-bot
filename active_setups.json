@@ -508,5 +508,20 @@
     "tp4": 0.0017294979999999997,
     "candle_time": 1794367800000,
     "status": "waiting"
+  },
+  "PEPEUSDT": {
+    "symbol": "PEPEUSDT",
+    "direction": "SHORT",
+    "move_pct": 2.2684310018903693,
+    "length": 4,
+    "high": 5.31e-06,
+    "low": 5.16e-06,
+    "entry": 5.2527e-06,
+    "alert_level": 5.235e-06,
+    "stop": 5.2779e-06,
+    "tp3": 5.177099999999999e-06,
+    "tp4": 5.151899999999999e-06,
+    "candle_time": 1794384900000,
+    "status": "waiting"
   }
 }
