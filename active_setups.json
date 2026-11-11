@@ -538,5 +538,20 @@
     "tp4": 1.0007837999999996,
     "candle_time": 1794394800000,
     "status": "waiting"
+  },
+  "SPCXBUSDT": {
+    "symbol": "SPCXBUSDT",
+    "direction": "LONG",
+    "move_pct": 1.1904761904761967,
+    "length": 11,
+    "high": 148.41,
+    "low": 145.85,
+    "entry": 146.82792,
+    "alert_level": 147.13,
+    "stop": 146.39784,
+    "tp3": 148.11816000000002,
+    "tp4": 148.54824000000002,
+    "candle_time": 1794398400000,
+    "status": "waiting"
   }
 }
