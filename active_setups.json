@@ -556,17 +556,32 @@
   },
   "GRAMUSDT": {
     "symbol": "GRAMUSDT",
+    "direction": "SHORT",
+    "move_pct": 4.541832669322705,
+    "length": 7,
+    "high": 1.257,
+    "low": 1.194,
+    "entry": 1.232934,
+    "alert_level": 1.2254999999999998,
+    "stop": 1.243518,
+    "tp3": 1.2011820000000002,
+    "tp4": 1.1905980000000003,
+    "candle_time": 1794409200000,
+    "status": "waiting"
+  },
+  "MUBUSDT": {
+    "symbol": "MUBUSDT",
     "direction": "LONG",
-    "move_pct": 6.086221470836842,
-    "length": 6,
-    "high": 1.256,
-    "low": 1.18,
-    "entry": 1.2090319999999999,
-    "alert_level": 1.218,
-    "stop": 1.196264,
-    "tp3": 1.2473359999999996,
-    "tp4": 1.2601039999999994,
-    "candle_time": 1794402900000,
-    "status": "alerted"
+    "move_pct": 2.491973902236951,
+    "length": 8,
+    "high": 799.43,
+    "low": 763.85,
+    "entry": 777.44156,
+    "alert_level": 781.64,
+    "stop": 771.46412,
+    "tp3": 795.37388,
+    "tp4": 801.35132,
+    "candle_time": 1794409200000,
+    "status": "waiting"
   }
 }
