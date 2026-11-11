@@ -477,7 +477,7 @@
     "tp3": 4035.17432,
     "tp4": 4028.13848,
     "candle_time": 1794317400000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "INITUSDT": {
     "symbol": "INITUSDT",
