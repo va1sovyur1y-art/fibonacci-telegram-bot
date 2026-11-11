@@ -164,21 +164,6 @@
     "candle_time": 1793304900000,
     "status": "alerted"
   },
-  "PEPEUSDT": {
-    "symbol": "PEPEUSDT",
-    "direction": "SHORT",
-    "move_pct": 4.972375690607735,
-    "length": 12,
-    "high": 5.53e-06,
-    "low": 5.11e-06,
-    "entry": 5.36956e-06,
-    "alert_level": 5.32e-06,
-    "stop": 5.44012e-06,
-    "tp3": 5.157879999999999e-06,
-    "tp4": 5.087319999999998e-06,
-    "candle_time": 1793304900000,
-    "status": "alerted"
-  },
   "ENAUSDT": {
     "symbol": "ENAUSDT",
     "direction": "SHORT",
@@ -507,6 +492,6 @@
     "tp3": 0.30092783999999995,
     "tp4": 0.32166575999999997,
     "candle_time": 1794321000000,
-    "status": "waiting"
+    "status": "alerted"
   }
 }
