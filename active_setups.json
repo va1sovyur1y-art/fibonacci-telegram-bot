@@ -493,5 +493,20 @@
     "tp4": 0.32166575999999997,
     "candle_time": 1794321000000,
     "status": "alerted"
+  },
+  "ONEUSDT": {
+    "symbol": "ONEUSDT",
+    "direction": "LONG",
+    "move_pct": 7.867036011080332,
+    "length": 6,
+    "high": 0.001956,
+    "low": 0.001797,
+    "entry": 0.0018577379999999998,
+    "alert_level": 0.0018765,
+    "stop": 0.001831026,
+    "tp3": 0.0019378739999999996,
+    "tp4": 0.0019645859999999995,
+    "candle_time": 1794362400000,
+    "status": "waiting"
   }
 }
