@@ -539,21 +539,6 @@
     "candle_time": 1794402900000,
     "status": "waiting"
   },
-  "GRAMUSDT": {
-    "symbol": "GRAMUSDT",
-    "direction": "SHORT",
-    "move_pct": 4.541832669322705,
-    "length": 7,
-    "high": 1.257,
-    "low": 1.194,
-    "entry": 1.232934,
-    "alert_level": 1.2254999999999998,
-    "stop": 1.243518,
-    "tp3": 1.2011820000000002,
-    "tp4": 1.1905980000000003,
-    "candle_time": 1794409200000,
-    "status": "alerted"
-  },
   "MUBUSDT": {
     "symbol": "MUBUSDT",
     "direction": "LONG",
