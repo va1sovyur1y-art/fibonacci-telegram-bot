@@ -568,20 +568,5 @@
     "tp4": 1.0012162000000004,
     "candle_time": 1794441600000,
     "status": "missed"
-  },
-  "LINKUSDT": {
-    "symbol": "LINKUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.4717661193432143,
-    "length": 6,
-    "high": 10.005,
-    "low": 9.77,
-    "entry": 9.915230000000001,
-    "alert_level": 9.8875,
-    "stop": 9.95471,
-    "tp3": 9.796790000000003,
-    "tp4": 9.757310000000004,
-    "candle_time": 1794492900000,
-    "status": "waiting"
   }
 }
