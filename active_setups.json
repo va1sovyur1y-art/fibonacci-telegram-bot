@@ -552,7 +552,7 @@
     "tp3": 1.2011820000000002,
     "tp4": 1.1905980000000003,
     "candle_time": 1794409200000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "MUBUSDT": {
     "symbol": "MUBUSDT",
