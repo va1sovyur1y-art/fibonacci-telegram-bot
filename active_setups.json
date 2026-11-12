@@ -567,7 +567,7 @@
     "tp3": 795.37388,
     "tp4": 801.35132,
     "candle_time": 1794409200000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
