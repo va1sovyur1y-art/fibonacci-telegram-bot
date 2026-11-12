@@ -569,19 +569,19 @@
     "candle_time": 1794441600000,
     "status": "missed"
   },
-  "GRAMUSDT": {
-    "symbol": "GRAMUSDT",
-    "direction": "LONG",
-    "move_pct": 2.991107518189161,
-    "length": 10,
-    "high": 1.286,
-    "low": 1.227,
-    "entry": 1.249538,
-    "alert_level": 1.2565,
-    "stop": 1.2396260000000001,
-    "tp3": 1.2792739999999998,
-    "tp4": 1.2891859999999997,
-    "candle_time": 1794489300000,
+  "LINKUSDT": {
+    "symbol": "LINKUSDT",
+    "direction": "SHORT",
+    "move_pct": 1.4717661193432143,
+    "length": 6,
+    "high": 10.005,
+    "low": 9.77,
+    "entry": 9.915230000000001,
+    "alert_level": 9.8875,
+    "stop": 9.95471,
+    "tp3": 9.796790000000003,
+    "tp4": 9.757310000000004,
+    "candle_time": 1794492900000,
     "status": "waiting"
   }
 }
