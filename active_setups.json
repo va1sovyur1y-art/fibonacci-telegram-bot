@@ -567,7 +567,7 @@
     "tp3": 1.0009455999999994,
     "tp4": 1.0008783999999993,
     "candle_time": 1794502800000,
-    "status": "waiting"
+    "status": "missed"
   },
   "GRAMUSDT": {
     "symbol": "GRAMUSDT",
