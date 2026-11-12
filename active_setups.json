@@ -568,5 +568,20 @@
     "tp4": 1.0012162000000004,
     "candle_time": 1794441600000,
     "status": "missed"
+  },
+  "GRAMUSDT": {
+    "symbol": "GRAMUSDT",
+    "direction": "LONG",
+    "move_pct": 2.991107518189161,
+    "length": 10,
+    "high": 1.286,
+    "low": 1.227,
+    "entry": 1.249538,
+    "alert_level": 1.2565,
+    "stop": 1.2396260000000001,
+    "tp3": 1.2792739999999998,
+    "tp4": 1.2891859999999997,
+    "candle_time": 1794489300000,
+    "status": "waiting"
   }
 }
