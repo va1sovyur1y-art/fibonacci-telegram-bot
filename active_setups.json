@@ -434,21 +434,6 @@
     "candle_time": 1794146400000,
     "status": "waiting"
   },
-  "AVAXUSDT": {
-    "symbol": "AVAXUSDT",
-    "direction": "LONG",
-    "move_pct": 9.63055729492798,
-    "length": 9,
-    "high": 8.78,
-    "low": 7.976,
-    "entry": 8.283128,
-    "alert_level": 8.378,
-    "stop": 8.148056,
-    "tp3": 8.688343999999997,
-    "tp4": 8.823415999999996,
-    "candle_time": 1794230100000,
-    "status": "alerted"
-  },
   "ARBUSDT": {
     "symbol": "ARBUSDT",
     "direction": "SHORT",
