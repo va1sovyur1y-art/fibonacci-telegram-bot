@@ -524,21 +524,6 @@
     "candle_time": 1794402900000,
     "status": "waiting"
   },
-  "MUBUSDT": {
-    "symbol": "MUBUSDT",
-    "direction": "LONG",
-    "move_pct": 2.491973902236951,
-    "length": 8,
-    "high": 799.43,
-    "low": 763.85,
-    "entry": 777.44156,
-    "alert_level": 781.64,
-    "stop": 771.46412,
-    "tp3": 795.37388,
-    "tp4": 801.35132,
-    "candle_time": 1794409200000,
-    "status": "alerted"
-  },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
     "direction": "SHORT",
