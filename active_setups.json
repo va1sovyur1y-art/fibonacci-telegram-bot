@@ -402,7 +402,7 @@
     "tp3": 1.0002658000000004,
     "tp4": 1.0003162000000005,
     "candle_time": 1794025800000,
-    "status": "waiting"
+    "status": "missed"
   },
   "ZECUSDT": {
     "symbol": "ZECUSDT",
