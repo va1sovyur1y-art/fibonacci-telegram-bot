@@ -613,5 +613,20 @@
     "tp4": 9.162616,
     "candle_time": 1794670200000,
     "status": "waiting"
+  },
+  "TAOUSDT": {
+    "symbol": "TAOUSDT",
+    "direction": "SHORT",
+    "move_pct": 7.5025693730729675,
+    "length": 11,
+    "high": 195.3,
+    "low": 179.7,
+    "entry": 189.3408,
+    "alert_level": 187.5,
+    "stop": 191.9616,
+    "tp3": 181.4784,
+    "tp4": 178.8576,
+    "candle_time": 1794690000000,
+    "status": "waiting"
   }
 }
