@@ -567,6 +567,21 @@
     "tp3": 0.03183004,
     "tp4": 0.031181559999999997,
     "candle_time": 1794629700000,
+    "status": "alerted"
+  },
+  "INJUSDT": {
+    "symbol": "INJUSDT",
+    "direction": "SHORT",
+    "move_pct": 2.889401481121773,
+    "length": 6,
+    "high": 8.25,
+    "low": 7.96,
+    "entry": 8.13922,
+    "alert_level": 8.105,
+    "stop": 8.18794,
+    "tp3": 7.993060000000002,
+    "tp4": 7.944340000000002,
+    "candle_time": 1794641400000,
     "status": "waiting"
   }
 }
