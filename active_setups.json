@@ -568,5 +568,20 @@
     "tp4": 7.944340000000002,
     "candle_time": 1794641400000,
     "status": "waiting"
+  },
+  "SHELLUSDT": {
+    "symbol": "SHELLUSDT",
+    "direction": "SHORT",
+    "move_pct": 14.167127836192584,
+    "length": 9,
+    "high": 0.03616,
+    "low": 0.02915,
+    "entry": 0.03348218,
+    "alert_level": 0.032654999999999997,
+    "stop": 0.03465986,
+    "tp3": 0.02994914,
+    "tp4": 0.02877146,
+    "candle_time": 1794652200000,
+    "status": "waiting"
   }
 }
