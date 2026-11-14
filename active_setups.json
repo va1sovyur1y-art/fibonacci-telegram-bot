@@ -628,5 +628,20 @@
     "tp4": 178.8576,
     "candle_time": 1794690000000,
     "status": "waiting"
+  },
+  "ASTERUSDT": {
+    "symbol": "ASTERUSDT",
+    "direction": "SHORT",
+    "move_pct": 18.61779428386888,
+    "length": 12,
+    "high": 0.62,
+    "low": 0.4784,
+    "entry": 0.5659088,
+    "alert_level": 0.5492,
+    "stop": 0.5896976,
+    "tp3": 0.4945423999999998,
+    "tp4": 0.47075359999999977,
+    "candle_time": 1794691800000,
+    "status": "waiting"
   }
 }
