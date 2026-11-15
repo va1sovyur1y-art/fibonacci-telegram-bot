@@ -612,7 +612,7 @@
     "tp3": 181.4784,
     "tp4": 178.8576,
     "candle_time": 1794690000000,
-    "status": "waiting"
+    "status": "missed"
   },
   "ASTERUSDT": {
     "symbol": "ASTERUSDT",
