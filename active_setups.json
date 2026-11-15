@@ -389,21 +389,6 @@
     "candle_time": 1793979000000,
     "status": "waiting"
   },
-  "UUSDT": {
-    "symbol": "UUSDT",
-    "direction": "LONG",
-    "move_pct": 0.029999999999996696,
-    "length": 4,
-    "high": 1.0003,
-    "low": 1.0,
-    "entry": 1.0001146,
-    "alert_level": 1.00015,
-    "stop": 1.0000642,
-    "tp3": 1.0002658000000004,
-    "tp4": 1.0003162000000005,
-    "candle_time": 1794025800000,
-    "status": "missed"
-  },
   "ZECUSDT": {
     "symbol": "ZECUSDT",
     "direction": "SHORT",
