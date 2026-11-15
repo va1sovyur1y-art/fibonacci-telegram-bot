@@ -599,21 +599,6 @@
     "candle_time": 1794670200000,
     "status": "waiting"
   },
-  "ASTERUSDT": {
-    "symbol": "ASTERUSDT",
-    "direction": "SHORT",
-    "move_pct": 18.61779428386888,
-    "length": 12,
-    "high": 0.62,
-    "low": 0.4784,
-    "entry": 0.5659088,
-    "alert_level": 0.5492,
-    "stop": 0.5896976,
-    "tp3": 0.4945423999999998,
-    "tp4": 0.47075359999999977,
-    "candle_time": 1794691800000,
-    "status": "alerted"
-  },
   "TAOUSDT": {
     "symbol": "TAOUSDT",
     "direction": "LONG",
@@ -627,6 +612,21 @@
     "tp3": 191.73619999999997,
     "tp4": 192.86179999999996,
     "candle_time": 1794737700000,
+    "status": "waiting"
+  },
+  "ASTERUSDT": {
+    "symbol": "ASTERUSDT",
+    "direction": "LONG",
+    "move_pct": 10.116366366366355,
+    "length": 10,
+    "high": 0.5963,
+    "low": 0.5326,
+    "entry": 0.5569334,
+    "alert_level": 0.56445,
+    "stop": 0.5462317999999999,
+    "tp3": 0.5890382000000003,
+    "tp4": 0.5997398000000004,
+    "candle_time": 1794774600000,
     "status": "waiting"
   }
 }
