@@ -612,7 +612,7 @@
     "tp3": 0.4945423999999998,
     "tp4": 0.47075359999999977,
     "candle_time": 1794691800000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "TAOUSDT": {
     "symbol": "TAOUSDT",
