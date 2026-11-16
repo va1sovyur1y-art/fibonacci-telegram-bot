@@ -612,7 +612,7 @@
     "tp3": 191.73619999999997,
     "tp4": 192.86179999999996,
     "candle_time": 1794737700000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "ASTERUSDT": {
     "symbol": "ASTERUSDT",
@@ -631,17 +631,17 @@
   },
   "MUBUSDT": {
     "symbol": "MUBUSDT",
-    "direction": "LONG",
-    "move_pct": 1.24291497975709,
-    "length": 8,
-    "high": 751.97,
-    "low": 741.0,
-    "entry": 745.19054,
-    "alert_level": 746.485,
-    "stop": 743.34758,
-    "tp3": 750.7194200000002,
-    "tp4": 752.5623800000003,
-    "candle_time": 1794816000000,
+    "direction": "SHORT",
+    "move_pct": 1.930836118619918,
+    "length": 9,
+    "high": 751.28,
+    "low": 735.36,
+    "entry": 745.19856,
+    "alert_level": 743.3199999999999,
+    "stop": 747.87312,
+    "tp3": 737.1748800000003,
+    "tp4": 734.5003200000003,
+    "candle_time": 1794823200000,
     "status": "waiting"
   }
 }
