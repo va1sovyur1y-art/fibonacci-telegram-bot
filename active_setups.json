@@ -628,5 +628,20 @@
     "tp4": 734.5003200000003,
     "candle_time": 1794823200000,
     "status": "waiting"
+  },
+  "RAREUSDT": {
+    "symbol": "RAREUSDT",
+    "direction": "SHORT",
+    "move_pct": 9.262883235485972,
+    "length": 4,
+    "high": 0.01535,
+    "low": 0.0135,
+    "entry": 0.0146433,
+    "alert_level": 0.014425,
+    "stop": 0.014954100000000001,
+    "tp3": 0.013710899999999995,
+    "tp4": 0.013400099999999993,
+    "candle_time": 1794857400000,
+    "status": "waiting"
   }
 }
