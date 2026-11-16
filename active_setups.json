@@ -599,21 +599,6 @@
     "candle_time": 1794670200000,
     "status": "waiting"
   },
-  "TAOUSDT": {
-    "symbol": "TAOUSDT",
-    "direction": "LONG",
-    "move_pct": 3.172043010752691,
-    "length": 9,
-    "high": 192.5,
-    "low": 185.8,
-    "entry": 188.3594,
-    "alert_level": 189.15,
-    "stop": 187.2338,
-    "tp3": 191.73619999999997,
-    "tp4": 192.86179999999996,
-    "candle_time": 1794737700000,
-    "status": "alerted"
-  },
   "ASTERUSDT": {
     "symbol": "ASTERUSDT",
     "direction": "SHORT",
