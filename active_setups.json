@@ -643,5 +643,20 @@
     "tp4": 1.0003837999999994,
     "candle_time": 1794930300000,
     "status": "waiting"
+  },
+  "BREVUSDT": {
+    "symbol": "BREVUSDT",
+    "direction": "SHORT",
+    "move_pct": 14.155251141552505,
+    "length": 3,
+    "high": 0.1383,
+    "low": 0.1021,
+    "entry": 0.1244716,
+    "alert_level": 0.1202,
+    "stop": 0.1305532,
+    "tp3": 0.10622679999999998,
+    "tp4": 0.10014519999999998,
+    "candle_time": 1794967200000,
+    "status": "waiting"
   }
 }
