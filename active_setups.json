@@ -509,21 +509,6 @@
     "candle_time": 1794402900000,
     "status": "waiting"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.02996404314824101,
-    "length": 8,
-    "high": 1.0013,
-    "low": 1.0009,
-    "entry": 1.0011472,
-    "alert_level": 1.0011,
-    "stop": 1.0012144,
-    "tp3": 1.0009455999999994,
-    "tp4": 1.0008783999999993,
-    "candle_time": 1794502800000,
-    "status": "missed"
-  },
   "GRAMUSDT": {
     "symbol": "GRAMUSDT",
     "direction": "SHORT",
