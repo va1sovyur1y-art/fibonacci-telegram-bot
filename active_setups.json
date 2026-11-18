@@ -658,5 +658,20 @@
     "tp4": 0.10014519999999998,
     "candle_time": 1794967200000,
     "status": "waiting"
+  },
+  "MMTUSDT": {
+    "symbol": "MMTUSDT",
+    "direction": "LONG",
+    "move_pct": 52.91666666666668,
+    "length": 12,
+    "high": 0.2336,
+    "low": 0.1416,
+    "entry": 0.176744,
+    "alert_level": 0.1876,
+    "stop": 0.161288,
+    "tp3": 0.2231120000000001,
+    "tp4": 0.2385680000000001,
+    "candle_time": 1794983400000,
+    "status": "waiting"
   }
 }
