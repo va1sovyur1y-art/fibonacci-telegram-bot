@@ -673,5 +673,20 @@
     "tp4": 1.0014269999999998,
     "candle_time": 1795033800000,
     "status": "waiting"
+  },
+  "PAXGUSDT": {
+    "symbol": "PAXGUSDT",
+    "direction": "LONG",
+    "move_pct": 0.2838137472283799,
+    "length": 6,
+    "high": 3733.26,
+    "low": 3719.39,
+    "entry": 3724.68834,
+    "alert_level": 3726.325,
+    "stop": 3722.3581799999997,
+    "tp3": 3731.6788200000015,
+    "tp4": 3734.008980000002,
+    "candle_time": 1795042800000,
+    "status": "waiting"
   }
 }
