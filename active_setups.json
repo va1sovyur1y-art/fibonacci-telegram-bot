@@ -372,7 +372,7 @@
     "tp3": 652.8970999999998,
     "tp4": 655.3918999999997,
     "candle_time": 1793925000000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "NVDABUSDT": {
     "symbol": "NVDABUSDT",
