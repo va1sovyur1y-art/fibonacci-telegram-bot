@@ -599,21 +599,6 @@
     "candle_time": 1794779100000,
     "status": "waiting"
   },
-  "MUBUSDT": {
-    "symbol": "MUBUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.930836118619918,
-    "length": 9,
-    "high": 751.28,
-    "low": 735.36,
-    "entry": 745.19856,
-    "alert_level": 743.3199999999999,
-    "stop": 747.87312,
-    "tp3": 737.1748800000003,
-    "tp4": 734.5003200000003,
-    "candle_time": 1794823200000,
-    "status": "alerted"
-  },
   "UUSDT": {
     "symbol": "UUSDT",
     "direction": "SHORT",
@@ -658,21 +643,6 @@
     "tp4": 0.2385680000000001,
     "candle_time": 1794983400000,
     "status": "waiting"
-  },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "LONG",
-    "move_pct": 0.039960039960057744,
-    "length": 7,
-    "high": 1.0014,
-    "low": 1.0009,
-    "entry": 1.001091,
-    "alert_level": 1.00115,
-    "stop": 1.001007,
-    "tp3": 1.0013429999999999,
-    "tp4": 1.0014269999999998,
-    "candle_time": 1795033800000,
-    "status": "alerted"
   },
   "PAXGUSDT": {
     "symbol": "PAXGUSDT",
