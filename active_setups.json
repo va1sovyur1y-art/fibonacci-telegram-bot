@@ -359,21 +359,6 @@
     "candle_time": 1793895300000,
     "status": "waiting"
   },
-  "QQQBUSDT": {
-    "symbol": "QQQBUSDT",
-    "direction": "LONG",
-    "move_pct": 1.4905443592211942,
-    "length": 6,
-    "high": 654.59,
-    "low": 639.74,
-    "entry": 645.4127,
-    "alert_level": 647.165,
-    "stop": 642.9179,
-    "tp3": 652.8970999999998,
-    "tp4": 655.3918999999997,
-    "candle_time": 1793925000000,
-    "status": "alerted"
-  },
   "NVDABUSDT": {
     "symbol": "NVDABUSDT",
     "direction": "SHORT",
