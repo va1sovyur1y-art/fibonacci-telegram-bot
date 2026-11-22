@@ -676,17 +676,17 @@
   },
   "MSTRBUSDT": {
     "symbol": "MSTRBUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.7730061349693196,
-    "length": 5,
-    "high": 81.62,
-    "low": 80.63,
-    "entry": 81.24182,
-    "alert_level": 81.125,
-    "stop": 81.40814,
-    "tp3": 80.74286000000001,
-    "tp4": 80.57654000000001,
-    "candle_time": 1795313700000,
-    "status": "alerted"
+    "direction": "LONG",
+    "move_pct": 3.800984972850114,
+    "length": 11,
+    "high": 82.76,
+    "low": 79.18,
+    "entry": 80.54756,
+    "alert_level": 80.97,
+    "stop": 79.94612000000001,
+    "tp3": 82.35188,
+    "tp4": 82.95331999999999,
+    "candle_time": 1795342500000,
+    "status": "waiting"
   }
 }
