@@ -673,5 +673,20 @@
     "tp4": 1.0011216000000007,
     "candle_time": 1795277700000,
     "status": "alerted"
+  },
+  "MSTRBUSDT": {
+    "symbol": "MSTRBUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.7730061349693196,
+    "length": 5,
+    "high": 81.62,
+    "low": 80.63,
+    "entry": 81.24182,
+    "alert_level": 81.125,
+    "stop": 81.40814,
+    "tp3": 80.74286000000001,
+    "tp4": 80.57654000000001,
+    "candle_time": 1795313700000,
+    "status": "waiting"
   }
 }
