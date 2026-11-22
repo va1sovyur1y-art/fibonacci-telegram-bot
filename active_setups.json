@@ -676,17 +676,17 @@
   },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.02995207667731299,
-    "length": 7,
+    "direction": "LONG",
+    "move_pct": 0.019974033756114846,
+    "length": 5,
     "high": 1.0016,
     "low": 1.0013,
-    "entry": 1.0014854,
+    "entry": 1.0014146000000002,
     "alert_level": 1.0014500000000002,
-    "stop": 1.0015358,
-    "tp3": 1.0013341999999996,
-    "tp4": 1.0012837999999995,
-    "candle_time": 1795358700000,
-    "status": "missed"
+    "stop": 1.0013642,
+    "tp3": 1.0015658000000005,
+    "tp4": 1.0016162000000006,
+    "candle_time": 1795374000000,
+    "status": "waiting"
   }
 }
