@@ -687,6 +687,6 @@
     "tp3": 80.74286000000001,
     "tp4": 80.57654000000001,
     "candle_time": 1795313700000,
-    "status": "waiting"
+    "status": "alerted"
   }
 }
