@@ -691,17 +691,17 @@
   },
   "ACEUSDT": {
     "symbol": "ACEUSDT",
-    "direction": "LONG",
-    "move_pct": 15.022091310751104,
-    "length": 4,
-    "high": 0.0809,
-    "low": 0.0672,
-    "entry": 0.0724334,
-    "alert_level": 0.07405,
-    "stop": 0.0701318,
-    "tp3": 0.0793382,
-    "tp4": 0.0816398,
-    "candle_time": 1795391100000,
+    "direction": "SHORT",
+    "move_pct": 18.881118881118887,
+    "length": 9,
+    "high": 0.0875,
+    "low": 0.069,
+    "entry": 0.080433,
+    "alert_level": 0.07825,
+    "stop": 0.083541,
+    "tp3": 0.071109,
+    "tp4": 0.068001,
+    "candle_time": 1795402800000,
     "status": "waiting"
   }
 }
