@@ -704,21 +704,6 @@
     "candle_time": 1795407300000,
     "status": "missed"
   },
-  "RWUSDUSDT": {
-    "symbol": "RWUSDUSDT",
-    "direction": "SHORT",
-    "move_pct": 0.0199980001999778,
-    "length": 5,
-    "high": 1.0001,
-    "low": 0.9999,
-    "entry": 1.0000236,
-    "alert_level": 1.0,
-    "stop": 1.0000572,
-    "tp3": 0.9999227999999998,
-    "tp4": 0.9998891999999997,
-    "candle_time": 1795432500000,
-    "status": "alerted"
-  },
   "PROMUSDT": {
     "symbol": "PROMUSDT",
     "direction": "LONG",
