@@ -703,5 +703,35 @@
     "tp4": 1.0012784000000003,
     "candle_time": 1795407300000,
     "status": "missed"
+  },
+  "RWUSDUSDT": {
+    "symbol": "RWUSDUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.0199980001999778,
+    "length": 5,
+    "high": 1.0001,
+    "low": 0.9999,
+    "entry": 1.0000236,
+    "alert_level": 1.0,
+    "stop": 1.0000572,
+    "tp3": 0.9999227999999998,
+    "tp4": 0.9998891999999997,
+    "candle_time": 1795432500000,
+    "status": "waiting"
+  },
+  "PROMUSDT": {
+    "symbol": "PROMUSDT",
+    "direction": "LONG",
+    "move_pct": 34.79845137781826,
+    "length": 10,
+    "high": 5.925,
+    "low": 4.387,
+    "entry": 4.9745159999999995,
+    "alert_level": 5.156,
+    "stop": 4.716132,
+    "tp3": 5.749667999999998,
+    "tp4": 6.0080519999999975,
+    "candle_time": 1795432500000,
+    "status": "waiting"
   }
 }
