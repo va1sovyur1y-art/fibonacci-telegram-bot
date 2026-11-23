@@ -659,21 +659,6 @@
     "candle_time": 1795342500000,
     "status": "waiting"
   },
-  "ACEUSDT": {
-    "symbol": "ACEUSDT",
-    "direction": "SHORT",
-    "move_pct": 18.881118881118887,
-    "length": 9,
-    "high": 0.0875,
-    "low": 0.069,
-    "entry": 0.080433,
-    "alert_level": 0.07825,
-    "stop": 0.083541,
-    "tp3": 0.071109,
-    "tp4": 0.068001,
-    "candle_time": 1795402800000,
-    "status": "alerted"
-  },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
     "direction": "SHORT",
@@ -702,6 +687,6 @@
     "tp3": 5.749667999999998,
     "tp4": 6.0080519999999975,
     "candle_time": 1795432500000,
-    "status": "waiting"
+    "status": "missed"
   }
 }
