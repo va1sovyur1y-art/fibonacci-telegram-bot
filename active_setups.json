@@ -674,21 +674,6 @@
     "candle_time": 1795342500000,
     "status": "waiting"
   },
-  "RLUSDUSDT": {
-    "symbol": "RLUSDUSDT",
-    "direction": "LONG",
-    "move_pct": 0.019974033756114846,
-    "length": 5,
-    "high": 1.0016,
-    "low": 1.0013,
-    "entry": 1.0014146000000002,
-    "alert_level": 1.0014500000000002,
-    "stop": 1.0013642,
-    "tp3": 1.0015658000000005,
-    "tp4": 1.0016162000000006,
-    "candle_time": 1795374000000,
-    "status": "waiting"
-  },
   "ACEUSDT": {
     "symbol": "ACEUSDT",
     "direction": "SHORT",
@@ -702,6 +687,21 @@
     "tp3": 0.071109,
     "tp4": 0.068001,
     "candle_time": 1795402800000,
+    "status": "waiting"
+  },
+  "RLUSDUSDT": {
+    "symbol": "RLUSDUSDT",
+    "direction": "SHORT",
+    "move_pct": 0.039932115403809115,
+    "length": 9,
+    "high": 1.0017,
+    "low": 1.0013,
+    "entry": 1.0015472,
+    "alert_level": 1.0015,
+    "stop": 1.0016144,
+    "tp3": 1.0013456000000003,
+    "tp4": 1.0012784000000003,
+    "candle_time": 1795407300000,
     "status": "waiting"
   }
 }
