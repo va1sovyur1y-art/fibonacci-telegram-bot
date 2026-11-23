@@ -629,21 +629,6 @@
     "candle_time": 1795057200000,
     "status": "alerted"
   },
-  "MUBUSDT": {
-    "symbol": "MUBUSDT",
-    "direction": "SHORT",
-    "move_pct": 8.48344693281402,
-    "length": 9,
-    "high": 661.64,
-    "low": 599.44,
-    "entry": 637.8796,
-    "alert_level": 630.54,
-    "stop": 648.3292,
-    "tp3": 606.5307999999999,
-    "tp4": 596.0811999999999,
-    "candle_time": 1795194000000,
-    "status": "alerted"
-  },
   "UUSDT": {
     "symbol": "UUSDT",
     "direction": "LONG",
@@ -687,7 +672,7 @@
     "tp3": 0.071109,
     "tp4": 0.068001,
     "candle_time": 1795402800000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
