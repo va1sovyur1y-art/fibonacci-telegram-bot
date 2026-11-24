@@ -688,5 +688,20 @@
     "tp4": 6.0080519999999975,
     "candle_time": 1795432500000,
     "status": "missed"
+  },
+  "MUBUSDT": {
+    "symbol": "MUBUSDT",
+    "direction": "SHORT",
+    "move_pct": 2.178718907720767,
+    "length": 5,
+    "high": 719.73,
+    "low": 700.28,
+    "entry": 712.3001,
+    "alert_level": 710.005,
+    "stop": 715.5677000000001,
+    "tp3": 702.4973,
+    "tp4": 699.2297,
+    "candle_time": 1795486500000,
+    "status": "waiting"
   }
 }
