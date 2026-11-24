@@ -644,21 +644,6 @@
     "candle_time": 1795277700000,
     "status": "alerted"
   },
-  "MSTRBUSDT": {
-    "symbol": "MSTRBUSDT",
-    "direction": "LONG",
-    "move_pct": 3.800984972850114,
-    "length": 11,
-    "high": 82.76,
-    "low": 79.18,
-    "entry": 80.54756,
-    "alert_level": 80.97,
-    "stop": 79.94612000000001,
-    "tp3": 82.35188,
-    "tp4": 82.95331999999999,
-    "candle_time": 1795342500000,
-    "status": "alerted"
-  },
   "RLUSDUSDT": {
     "symbol": "RLUSDUSDT",
     "direction": "SHORT",
@@ -674,21 +659,6 @@
     "candle_time": 1795407300000,
     "status": "missed"
   },
-  "PROMUSDT": {
-    "symbol": "PROMUSDT",
-    "direction": "LONG",
-    "move_pct": 34.79845137781826,
-    "length": 10,
-    "high": 5.925,
-    "low": 4.387,
-    "entry": 4.9745159999999995,
-    "alert_level": 5.156,
-    "stop": 4.716132,
-    "tp3": 5.749667999999998,
-    "tp4": 6.0080519999999975,
-    "candle_time": 1795432500000,
-    "status": "missed"
-  },
   "MUBUSDT": {
     "symbol": "MUBUSDT",
     "direction": "SHORT",
@@ -702,6 +672,21 @@
     "tp3": 702.4973,
     "tp4": 699.2297,
     "candle_time": 1795486500000,
+    "status": "waiting"
+  },
+  "SOXSBUSDT": {
+    "symbol": "SOXSBUSDT",
+    "direction": "LONG",
+    "move_pct": 13.36714363339975,
+    "length": 12,
+    "high": 62.59,
+    "low": 54.98,
+    "entry": 57.88702,
+    "alert_level": 58.785,
+    "stop": 56.60854,
+    "tp3": 61.722460000000005,
+    "tp4": 63.00094000000001,
+    "candle_time": 1795534200000,
     "status": "waiting"
   }
 }
