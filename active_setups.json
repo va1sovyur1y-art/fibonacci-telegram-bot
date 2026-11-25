@@ -691,17 +691,17 @@
   },
   "WBTCUSDT": {
     "symbol": "WBTCUSDT",
-    "direction": "SHORT",
-    "move_pct": 1.1884888567539988,
+    "direction": "LONG",
+    "move_pct": 3.0950022773654258,
     "length": 12,
-    "high": 60201.13,
-    "low": 59360.06,
-    "entry": 59879.84126,
-    "alert_level": 59780.595,
-    "stop": 60021.141019999995,
-    "tp3": 59455.94198000002,
-    "tp4": 59314.64222000002,
-    "candle_time": 1795570200000,
-    "status": "missed"
+    "high": 60510.13,
+    "low": 58247.13,
+    "entry": 59111.596,
+    "alert_level": 59378.63,
+    "stop": 58731.412,
+    "tp3": 60252.148,
+    "tp4": 60632.332,
+    "candle_time": 1795635000000,
+    "status": "waiting"
   }
 }
