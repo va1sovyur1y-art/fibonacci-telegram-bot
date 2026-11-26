@@ -612,7 +612,7 @@
     "tp3": 0.2231120000000001,
     "tp4": 0.2385680000000001,
     "candle_time": 1794983400000,
-    "status": "waiting"
+    "status": "alerted"
   },
   "PAXGUSDT": {
     "symbol": "PAXGUSDT",
