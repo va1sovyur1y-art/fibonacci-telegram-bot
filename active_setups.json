@@ -567,7 +567,7 @@
     "tp3": 9.229144,
     "tp4": 9.162616,
     "candle_time": 1794670200000,
-    "status": "waiting"
+    "status": "missed"
   },
   "ASTERUSDT": {
     "symbol": "ASTERUSDT",
@@ -658,21 +658,6 @@
     "tp4": 699.2297,
     "candle_time": 1795486500000,
     "status": "waiting"
-  },
-  "SOXSBUSDT": {
-    "symbol": "SOXSBUSDT",
-    "direction": "LONG",
-    "move_pct": 13.36714363339975,
-    "length": 12,
-    "high": 62.59,
-    "low": 54.98,
-    "entry": 57.88702,
-    "alert_level": 58.785,
-    "stop": 56.60854,
-    "tp3": 61.722460000000005,
-    "tp4": 63.00094000000001,
-    "candle_time": 1795534200000,
-    "status": "alerted"
   },
   "UUSDT": {
     "symbol": "UUSDT",
