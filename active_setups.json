@@ -584,21 +584,6 @@
     "candle_time": 1794967200000,
     "status": "waiting"
   },
-  "MMTUSDT": {
-    "symbol": "MMTUSDT",
-    "direction": "LONG",
-    "move_pct": 52.91666666666668,
-    "length": 12,
-    "high": 0.2336,
-    "low": 0.1416,
-    "entry": 0.176744,
-    "alert_level": 0.1876,
-    "stop": 0.161288,
-    "tp3": 0.2231120000000001,
-    "tp4": 0.2385680000000001,
-    "candle_time": 1794983400000,
-    "status": "alerted"
-  },
   "PAXGUSDT": {
     "symbol": "PAXGUSDT",
     "direction": "SHORT",
@@ -672,6 +657,36 @@
     "tp3": 60252.148,
     "tp4": 60632.332,
     "candle_time": 1795635000000,
+    "status": "waiting"
+  },
+  "PORTALUSDT": {
+    "symbol": "PORTALUSDT",
+    "direction": "SHORT",
+    "move_pct": 58.51089298539621,
+    "length": 9,
+    "high": 0.045,
+    "low": 0.01433,
+    "entry": 0.03328406,
+    "alert_level": 0.029664999999999997,
+    "stop": 0.03843662,
+    "tp3": 0.017826379999999996,
+    "tp4": 0.012673819999999995,
+    "candle_time": 1795840200000,
+    "status": "waiting"
+  },
+  "WLFIUSDT": {
+    "symbol": "WLFIUSDT",
+    "direction": "SHORT",
+    "move_pct": 28.97727272727273,
+    "length": 6,
+    "high": 0.0353,
+    "low": 0.0211,
+    "entry": 0.0298756,
+    "alert_level": 0.0282,
+    "stop": 0.0322612,
+    "tp3": 0.022718800000000004,
+    "tp4": 0.020333200000000006,
+    "candle_time": 1795840200000,
     "status": "waiting"
   }
 }
