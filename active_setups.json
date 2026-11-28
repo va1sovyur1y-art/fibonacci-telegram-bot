@@ -657,7 +657,7 @@
     "tp3": 60252.148,
     "tp4": 60632.332,
     "candle_time": 1795635000000,
-    "status": "waiting"
+    "status": "missed"
   },
   "PORTALUSDT": {
     "symbol": "PORTALUSDT",
